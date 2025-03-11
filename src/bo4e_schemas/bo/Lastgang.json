@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Modell zur Abbildung eines Lastganges;\nIn diesem Modell werden die Messwerte mit einem vollständigen Zeitintervall (zeit_intervall_laenge) angegeben und es bietet daher eine hohe Flexibilität in der Übertragung jeglicher zeitlich veränderlicher Messgrössen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Lastgang.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Lastgang JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Lastgang.json>`_",
+    "description": "Modell zur Abbildung eines Lastganges;\nIn diesem Modell werden die Messwerte mit einem vollständigen Zeitintervall (zeit_intervall_laenge) angegeben und es bietet daher eine hohe Flexibilität in der Übertragung jeglicher zeitlich veränderlicher Messgrössen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Lastgang.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Lastgang JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Lastgang.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -12,37 +12,33 @@
                 }
             ],
             "default": null,
-            "description": "Hier können IDs anderer Systeme hinterlegt werden (z.B. eine SAP-GP-Nummer oder eine GUID)",
+            "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
             "title": " Id"
         },
         "_typ": {
-            "anyOf": [
-                {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/enum/Typ.json"
-                },
-                {
-                    "type": "null"
-                }
-            ],
+            "const": "LASTGANG",
             "default": "LASTGANG",
-            "description": "Angabe, ob es sich um einen Gas- oder Stromlastgang handelt"
+            "enum": [
+                "LASTGANG"
+            ],
+            "title": " Typ",
+            "type": "string"
         },
         "marktlokation": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Marktlokation.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Marktlokation.json"
                 },
                 {
                     "type": "null"
                 }
             ],
-            "default": null,
-            "description": "Marktlokation, zu der der Lastgang gehört"
+            "default": null
         },
         "messgroesse": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/enum/Mengeneinheit.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/enum/Mengeneinheit.json"
                 },
                 {
                     "type": "null"
@@ -54,14 +50,13 @@
         "messlokation": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Messlokation.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Messlokation.json"
                 },
                 {
                     "type": "null"
                 }
             ],
-            "default": null,
-            "description": "Marktlokation, zu der der Lastgang gehört"
+            "default": null
         },
         "obisKennzahl": {
             "anyOf": [
@@ -79,7 +74,7 @@
         "sparte": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/enum/Sparte.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/enum/Sparte.json"
                 },
                 {
                     "type": "null"
@@ -105,7 +100,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zeitreihenwert.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Zeitreihenwert.json"
                     },
                     "type": "array"
                 },
@@ -120,7 +115,7 @@
         "zeitIntervallLaenge": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -131,7 +126,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

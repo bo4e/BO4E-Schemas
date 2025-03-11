@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Die Sigmoid-Funktion, beispielsweise zur Berechnung eines Leistungspreises hat die Form:\nLP=A/(1+(P/B)^C)+D\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Sigmoidparameter.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Sigmoidparameter JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Sigmoidparameter.json>`_",
+    "description": "Die Sigmoid-Funktion, beispielsweise zur Berechnung eines Leistungspreises hat die Form:\nLP=A/(1+(P/B)^C)+D\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Sigmoidparameter.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Sigmoidparameter JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Sigmoidparameter.json>`_",
     "properties": {
         "A": {
             "anyOf": [
@@ -27,7 +27,7 @@
                 }
             ],
             "default": null,
-            "description": "Briefmarke Ortsverteilnetz (EUR/kWh)",
+            "description": "Wendepunkt für die bepreiste Menge (kW)",
             "title": "B"
         },
         "C": {
@@ -41,7 +41,7 @@
                 }
             ],
             "default": null,
-            "description": "Wendepunkt für die bepreiste Menge (kW)",
+            "description": "Exponent (einheitenlos)",
             "title": "C"
         },
         "D": {
@@ -55,7 +55,7 @@
                 }
             ],
             "default": null,
-            "description": "Exponent (einheitenlos)",
+            "description": "Briefmarke Transportnetz (EUR/kWh)",
             "title": "D"
         },
         "_id": {
@@ -80,15 +80,15 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.4.0",
-            "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
+            "default": "202401.5.0",
+            "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

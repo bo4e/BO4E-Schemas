@@ -12,7 +12,8 @@
         "MODERNE_MESSEINRICHTUNG",
         "INTELLIGENTES_MESSSYSTEM",
         "ELEKTRONISCHER_ZAEHLER",
-        "WIRBELGASZAEHLER"
+        "WIRBELGASZAEHLER",
+        "WASSERZAEHLER"
     ],
     "title": "Zaehlertyp",
     "type": "string"

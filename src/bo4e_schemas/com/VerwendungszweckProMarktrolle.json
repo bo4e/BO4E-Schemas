@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Dient zur Identifizierung des Verwendungszwecks der Marktrolle an der Marktlokation, der die Werte zu übermitteln sind.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Verwendungszweck.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Verwendungszweck JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Verwendungszweck.json>`_",
+    "description": "Dient zur Identifizierung des Verwendungszwecks der Marktrolle an der Marktlokation, der die Werte zu übermitteln sind.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Verwendungszweck.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Verwendungszweck JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Verwendungszweck.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -24,14 +24,14 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.4.0",
-            "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
+            "default": "202401.5.0",
+            "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
         "marktrolle": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/enum/Marktrolle.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/enum/Marktrolle.json"
                 },
                 {
                     "type": "null"
@@ -44,7 +44,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
@@ -59,7 +59,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/enum/Verwendungszweck.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/enum/Verwendungszweck.json"
                     },
                     "type": "array"
                 },
