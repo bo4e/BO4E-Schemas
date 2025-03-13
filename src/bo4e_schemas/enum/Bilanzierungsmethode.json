@@ -5,7 +5,8 @@
         "SLP",
         "TLP_GEMEINSAM",
         "TLP_GETRENNT",
-        "PAUSCHAL"
+        "PAUSCHAL",
+        "IMS"
     ],
     "title": "Bilanzierungsmethode",
     "type": "string"

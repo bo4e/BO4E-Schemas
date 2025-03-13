@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Gibt die Staffelgrenzen der jeweiligen Preise an\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/TarifpreisstaffelProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `TarifpreisstaffelProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_",
+    "description": "Gibt die Staffelgrenzen der jeweiligen Preise an\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/TarifpreisstaffelProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `TarifpreisstaffelProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -24,7 +24,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.5.0",
+            "default": "202401.6.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
@@ -102,7 +102,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
