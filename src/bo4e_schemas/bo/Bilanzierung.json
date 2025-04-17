@@ -18,7 +18,7 @@
         "_typ": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/BoTyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/BoTyp.json"
                 },
                 {
                     "type": "null"
@@ -35,14 +35,14 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.7.0",
+            "default": "202501.0.0",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
         "abwicklungsmodell": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Abwicklungsmodell.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Abwicklungsmodell.json"
                 },
                 {
                     "type": "null"
@@ -53,7 +53,7 @@
         "aggregationsverantwortung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Aggregationsverantwortung.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Aggregationsverantwortung.json"
                 },
                 {
                     "type": "null"
@@ -103,7 +103,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Profiltyp.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Profiltyp.json"
                     },
                     "type": "array"
                 },
@@ -118,7 +118,7 @@
         "fallgruppenzuordnung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Fallgruppenzuordnung.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Fallgruppenzuordnung.json"
                 },
                 {
                     "type": "null"
@@ -129,7 +129,7 @@
         "grundWahlrechtPrognosegrundlage": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/WahlrechtPrognosegrundlage.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/WahlrechtPrognosegrundlage.json"
                 },
                 {
                     "type": "null"
@@ -141,7 +141,7 @@
         "jahresverbrauchsprognose": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -152,7 +152,7 @@
         "kundenwert": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -164,7 +164,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Lastprofil.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Lastprofil.json"
                     },
                     "type": "array"
                 },
@@ -202,7 +202,7 @@
         "prognosegrundlage": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Prognosegrundlage.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Prognosegrundlage.json"
                 },
                 {
                     "type": "null"
@@ -213,7 +213,7 @@
         "temperaturArbeit": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -238,7 +238,7 @@
         "wahlrechtPrognosegrundlage": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/WahlrechtPrognosegrundlage.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/WahlrechtPrognosegrundlage.json"
                 },
                 {
                     "type": "null"
@@ -250,7 +250,7 @@
         "zeitreihentyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Zeitreihentyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Zeitreihentyp.json"
                 },
                 {
                     "type": "null"
@@ -262,7 +262,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

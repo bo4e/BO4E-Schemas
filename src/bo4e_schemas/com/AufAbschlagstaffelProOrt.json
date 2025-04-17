@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Gibt den Wert eines Auf- oder Abschlags und dessen Staffelgrenzen an\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/AufAbschlagstaffelProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `AufAbschlagstaffelProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_",
+    "description": "Gibt den Wert eines Auf- oder Abschlags und dessen Staffelgrenzen an\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/AufAbschlagstaffelProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `AufAbschlagstaffelProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -33,7 +33,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.7.0",
+            "default": "202501.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
@@ -83,7 +83,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

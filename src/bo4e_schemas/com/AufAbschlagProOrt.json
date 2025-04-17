@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit dieser Komponente können Auf- und Abschläge verschiedener Typen im Zusammenhang\nmit örtlichen Gültigkeiten abgebildet werden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/AufAbschlagProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `AufAbschlagProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/AufAbschlagProOrt.json>`_",
+    "description": "Mit dieser Komponente können Auf- und Abschläge verschiedener Typen im Zusammenhang\nmit örtlichen Gültigkeiten abgebildet werden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/AufAbschlagProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `AufAbschlagProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/AufAbschlagProOrt.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -33,7 +33,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.7.0",
+            "default": "202501.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
@@ -80,7 +80,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json"
                     },
                     "type": "array"
                 },
@@ -96,7 +96,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Abbildung eines Steuerbetrages.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Steuerbetrag.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Steuerbetrag JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Steuerbetrag.json>`_",
+    "description": "Abbildung eines Steuerbetrages.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Steuerbetrag.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Steuerbetrag JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Steuerbetrag.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -33,7 +33,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.7.0",
+            "default": "202501.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
@@ -54,7 +54,7 @@
         "steuerkennzeichen": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Steuerkennzeichen.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Steuerkennzeichen.json"
                 },
                 {
                     "type": "null"
@@ -80,7 +80,7 @@
         "waehrung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Waehrungscode.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Waehrungscode.json"
                 },
                 {
                     "type": "null"
@@ -93,7 +93,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

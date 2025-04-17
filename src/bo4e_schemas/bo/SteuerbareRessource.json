@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Object containing information about a steuerbare Ressource\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/SteuerbareRessource.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `SteuerbareRessource JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/SteuerbareRessource.json>`_",
+    "description": "Object containing information about a steuerbare Ressource\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/SteuerbareRessource.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `SteuerbareRessource JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/bo/SteuerbareRessource.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -33,14 +33,14 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.7.0",
+            "default": "202501.0.0",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
         "eigenschaftMsbLokation": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Marktrolle.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Marktrolle.json"
                 },
                 {
                     "type": "null"
@@ -53,7 +53,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Konfigurationsprodukt.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Konfigurationsprodukt.json"
                     },
                     "type": "array"
                 },
@@ -82,7 +82,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Lokationszuordnung.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/bo/Lokationszuordnung.json"
                     },
                     "type": "array"
                 },
@@ -110,7 +110,7 @@
         "steuerkanalLeistungsbeschreibung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/SteuerkanalLeistungsbeschreibung.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/SteuerkanalLeistungsbeschreibung.json"
                 },
                 {
                     "type": "null"
@@ -136,7 +136,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

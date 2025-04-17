@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Objekt zur Aufnahme der Information zu einem Marktteilnehmer\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Marktteilnehmer.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Marktteilnehmer JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Marktteilnehmer.json>`_",
+    "description": "Objekt zur Aufnahme der Information zu einem Marktteilnehmer\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Marktteilnehmer.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Marktteilnehmer JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/bo/Marktteilnehmer.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -33,14 +33,14 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.7.0",
+            "default": "202501.0.0",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
         "geschaeftspartner": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Geschaeftspartner.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/bo/Geschaeftspartner.json"
                 },
                 {
                     "type": "null"
@@ -68,7 +68,7 @@
         "marktrolle": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Marktrolle.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Marktrolle.json"
                 },
                 {
                     "type": "null"
@@ -93,7 +93,7 @@
         "rollencodetyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Rollencodetyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Rollencodetyp.json"
                 },
                 {
                     "type": "null"
@@ -105,7 +105,7 @@
         "sparte": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Sparte.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Sparte.json"
                 },
                 {
                     "type": "null"
@@ -118,7 +118,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

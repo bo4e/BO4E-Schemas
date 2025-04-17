@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Modell für die preiserhöhenden (Aufschlag) bzw. preisvermindernden (Abschlag) Zusatzvereinbarungen,\ndie individuell zu einem neuen oder bestehenden Liefervertrag abgeschlossen wurden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/AufAbschlag.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `AufAbschlag JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/AufAbschlag.json>`_",
+    "description": "Modell für die preiserhöhenden (Aufschlag) bzw. preisvermindernden (Abschlag) Zusatzvereinbarungen,\ndie individuell zu einem neuen oder bestehenden Liefervertrag abgeschlossen wurden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/AufAbschlag.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `AufAbschlag JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/AufAbschlag.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -33,14 +33,14 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.7.0",
+            "default": "202501.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
         "aufAbschlagstyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/AufAbschlagstyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/AufAbschlagstyp.json"
                 },
                 {
                     "type": "null"
@@ -52,7 +52,7 @@
         "aufAbschlagsziel": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/AufAbschlagsziel.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/AufAbschlagsziel.json"
                 },
                 {
                     "type": "null"
@@ -90,7 +90,7 @@
         "einheit": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/enum/Waehrungseinheit.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/enum/Waehrungseinheit.json"
                 },
                 {
                     "type": "null"
@@ -102,7 +102,7 @@
         "gueltigkeitszeitraum": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Zeitraum.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
@@ -115,7 +115,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Preisstaffel.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Preisstaffel.json"
                     },
                     "type": "array"
                 },
@@ -144,7 +144,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

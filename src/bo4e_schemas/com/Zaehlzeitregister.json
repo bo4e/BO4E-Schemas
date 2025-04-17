@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit dieser Komponente werden Zählzeitregister modelliert. Ein Zählzeitregister beschreibt eine erweiterte Definition der Zählzeit\nin Bezug auf ein Register. Dabei werden alle Codes dazu vom Netzbetreiber vergeben.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zaehlzeitregister.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zaehlzeitregister JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Zaehlzeitregister.json>`_",
+    "description": "Mit dieser Komponente werden Zählzeitregister modelliert. Ein Zählzeitregister beschreibt eine erweiterte Definition der Zählzeit\nin Bezug auf ein Register. Dabei werden alle Codes dazu vom Netzbetreiber vergeben.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zaehlzeitregister.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zaehlzeitregister JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Zaehlzeitregister.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -33,7 +33,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.7.0",
+            "default": "202501.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
@@ -80,7 +80,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
