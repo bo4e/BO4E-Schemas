@@ -1,0 +1,16 @@
+{
+    "description": "Codes der Summenzeitreihentypen.\n\nDie nachfolgenden Codes sind in DE7111 zu nutzen:\nhttps://www.edi-energy.de/index.php?id=38&tx_bdew_bdew%5Buid%5D=695&tx_bdew_bdew%5Baction%5D=download\n&tx_bdew_bdew%5Bcontroller%5D=Dokument&cHash=67782e05d8b0f75fbe3a0e1801d07ed0",
+    "enum": [
+        "EGS",
+        "LGS",
+        "NZR",
+        "SES",
+        "SLS",
+        "TES",
+        "TLS",
+        "SLS_TLS",
+        "SES_TES"
+    ],
+    "title": "Zeitreihentyp",
+    "type": "string"
+}

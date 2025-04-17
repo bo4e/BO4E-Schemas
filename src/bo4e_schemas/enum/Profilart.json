@@ -1,0 +1,12 @@
+{
+    "description": "Profilart: temperaturabh./Standardlastprofil.",
+    "enum": [
+        "ART_STANDARDLASTPROFIL",
+        "ART_TAGESPARAMETERABHAENGIGES_LASTPROFIL",
+        "ART_LASTPROFIL",
+        "ART_STANDARDEINSPEISEPROFIL",
+        "ART_TAGESPARAMETERABHAENGIGES_EINSPEISEPROFIL"
+    ],
+    "title": "Profilart",
+    "type": "string"
+}

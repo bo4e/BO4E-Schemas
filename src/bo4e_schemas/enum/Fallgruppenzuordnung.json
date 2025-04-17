@@ -1,0 +1,10 @@
+{
+    "description": "Fallgruppenzuordnung nach edi@energy",
+    "enum": [
+        "GABI_RLM_MIT_TAGESBAND",
+        "GABI_RLM_OHNE_TAGESBAND",
+        "GABI_RLM_IM_NOMINIERUNGSERSATZVERFAHREN"
+    ],
+    "title": "Fallgruppenzuordnung",
+    "type": "string"
+}

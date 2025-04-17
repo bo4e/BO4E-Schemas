@@ -1,0 +1,9 @@
+{
+    "description": "Prognosegrundlage (WERTE, PROFILE).",
+    "enum": [
+        "WERTE",
+        "PROFILE"
+    ],
+    "title": "Prognosegrundlage",
+    "type": "string"
+}

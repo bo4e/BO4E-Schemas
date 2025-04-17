@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Eine Zeitspanne ist definiert aus Start und/oder Ende.\nDer Unterschied zur Menge (die auch zur Abbildung von Zeitmengen genutzt wird) ist, dass konkrete Start- und Endzeitpunkte angegeben werden.\nDie Zeitspanne ist aus dem COM Zeitraum hervorgegangen, das in Zeitspanne und Menge aufgeteilt wurde.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zeitspanne.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zeitspanne JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Zeitspanne.json>`_",
+    "description": "Speichert Informationen zu einer tagesparameter abhängigen Messstelle. z.B. den Namen einer Klimazone oder die ID\nder Wetterstation für die Temperaturmessstelle",
     "properties": {
         "_id": {
             "anyOf": [
@@ -15,6 +15,15 @@
             "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
             "title": " Id"
         },
+        "_typ": {
+            "const": "TAGESPARAMETER",
+            "default": "TAGESPARAMETER",
+            "enum": [
+                "TAGESPARAMETER"
+            ],
+            "title": " Typ",
+            "type": "string"
+        },
         "_version": {
             "anyOf": [
                 {
@@ -24,14 +33,13 @@
                     "type": "null"
                 }
             ],
-            "default": "202401.6.0",
+            "default": "202401.7.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
-        "ende": {
+        "dienstanbieter": {
             "anyOf": [
                 {
-                    "format": "date-time",
                     "type": "string"
                 },
                 {
@@ -39,13 +47,11 @@
                 }
             ],
             "default": null,
-            "description": "exklusives Ende",
-            "title": "Ende"
+            "title": "Dienstanbieter"
         },
-        "start": {
+        "herausgeber": {
             "anyOf": [
                 {
-                    "format": "date-time",
                     "type": "string"
                 },
                 {
@@ -53,14 +59,37 @@
                 }
             ],
             "default": null,
-            "description": "inklusiver Beginn",
-            "title": "Start"
+            "title": "Herausgeber"
+        },
+        "klimazone": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Klimazone"
+        },
+        "temperaturmessstelle": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Temperaturmessstelle"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
@@ -72,6 +101,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "Zeitspanne",
+    "title": "Tagesparameter",
     "type": "object"
 }

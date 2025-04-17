@@ -1,0 +1,9 @@
+{
+    "description": "Art des Abwicklungsmodell (E-Mob)",
+    "enum": [
+        "MODELL_1",
+        "MODELL_2"
+    ],
+    "title": "Abwicklungsmodell",
+    "type": "string"
+}

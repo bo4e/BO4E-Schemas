@@ -1,8 +1,9 @@
 {
-    "description": "Auflistung sämtlicher existierender Geschäftsobjekte.",
+    "description": "Auflistung sämtlicher existierender Geschäftsobjekte.\n\n.. HINT::\n    Die Unterscheidung zwischen Komponenten und Geschäftsobjekten ist, dass Komponenten immer in einem Geschäftsobjekt enthalten sind.\n    Geschäftsobjekte können auch ohne Komponenten existieren.",
     "enum": [
         "ANGEBOT",
         "AUSSCHREIBUNG",
+        "BILANZIERUNG",
         "BUENDELVERTRAG",
         "ENERGIEMENGE",
         "FREMDKOSTEN",
@@ -39,6 +40,6 @@
         "ZEITREIHE",
         "LOKATIONSZUORDNUNG"
     ],
-    "title": "Typ",
+    "title": "BoTyp",
     "type": "string"
 }

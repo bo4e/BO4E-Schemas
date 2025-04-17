@@ -1,0 +1,13 @@
+{
+    "description": "Wahlrecht der Prognosegrundlage der Marktlokation.",
+    "enum": [
+        "DURCH_LF",
+        "DURCH_LF_NICHT_GEGEBEN",
+        "NICHT_WEGEN_GROSSEN_VERBRAUCHS",
+        "NICHT_WEGEN_EIGENVERBRAUCH",
+        "NICHT_WEGEN_TAGES_VERBRAUCH",
+        "NICHT_WEGEN_ENWG"
+    ],
+    "title": "WahlrechtPrognosegrundlage",
+    "type": "string"
+}

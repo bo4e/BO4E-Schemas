@@ -1,0 +1,9 @@
+{
+    "description": "Profiltyp (temperaturabhängig / Standardlastprofil).",
+    "enum": [
+        "SLP_SEP",
+        "TLP_TEP"
+    ],
+    "title": "Profiltyp",
+    "type": "string"
+}

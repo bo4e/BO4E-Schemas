@@ -1,0 +1,9 @@
+{
+    "description": "Profilverfahren: synthetisch/ analytisch.",
+    "enum": [
+        "SYNTHETISCH",
+        "ANALYTISCH"
+    ],
+    "title": "Profilverfahren",
+    "type": "string"
+}

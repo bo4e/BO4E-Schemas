@@ -1,0 +1,9 @@
+{
+    "description": "Mögliche Qualifier für die Aggregationsverantwortung",
+    "enum": [
+        "UENB",
+        "VNB"
+    ],
+    "title": "Aggregationsverantwortung",
+    "type": "string"
+}
