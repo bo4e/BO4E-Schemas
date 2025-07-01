@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/TarifpreispositionProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `TarifpreispositionProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/TarifpreispositionProOrt.json>`_",
+    "description": "Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/TarifpreispositionProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `TarifpreispositionProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v0.1.dev1+gff94097/src/bo4e_schemas/com/TarifpreispositionProOrt.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -33,7 +33,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.0.0",
+            "default": "0.1.dev1+gff94097",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": " Version"
         },
@@ -80,7 +80,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json"
                     },
                     "type": "array"
                 },
@@ -95,7 +95,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
