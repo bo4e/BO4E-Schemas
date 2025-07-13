@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Abbildung eines Bündelvertrags.\nEs handelt sich hierbei um eine Liste von Einzelverträgen, die in einem Vertragsobjekt gebündelt sind.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Buendelvertrag.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Buendelvertrag JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v0.1.dev1+gff94097/src/bo4e_schemas/bo/Buendelvertrag.json>`_",
+    "description": "Abbildung eines Bündelvertrags.\nEs handelt sich hierbei um eine Liste von Einzelverträgen, die in einem Vertragsobjekt gebündelt sind.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Buendelvertrag.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Buendelvertrag JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Buendelvertrag.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -13,15 +13,12 @@
             ],
             "default": null,
             "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
-            "title": " Id"
+            "title": "Id"
         },
         "_typ": {
             "const": "BUENDELVERTRAG",
             "default": "BUENDELVERTRAG",
-            "enum": [
-                "BUENDELVERTRAG"
-            ],
-            "title": " Typ",
+            "title": "Typ",
             "type": "string"
         },
         "_version": {
@@ -33,9 +30,9 @@
                     "type": "null"
                 }
             ],
-            "default": "0.1.dev1+gff94097",
+            "default": "202501.1.0rc1",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
-            "title": " Version"
+            "title": "Version"
         },
         "beschreibung": {
             "anyOf": [
@@ -54,7 +51,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Vertrag.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Vertrag.json"
                     },
                     "type": "array"
                 },
@@ -69,7 +66,7 @@
         "sparte": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Sparte.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Sparte.json"
                 },
                 {
                     "type": "null"
@@ -82,7 +79,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Unterschrift.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Unterschrift.json"
                     },
                     "type": "array"
                 },
@@ -98,7 +95,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Unterschrift.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Unterschrift.json"
                     },
                     "type": "array"
                 },
@@ -113,7 +110,7 @@
         "vertragsart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Vertragsart.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Vertragsart.json"
                 },
                 {
                     "type": "null"
@@ -154,7 +151,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Vertragskonditionen.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Vertragskonditionen.json"
                     },
                     "type": "array"
                 },
@@ -182,7 +179,7 @@
         "vertragspartner1": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Geschaeftspartner.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Geschaeftspartner.json"
                 },
                 {
                     "type": "null"
@@ -194,7 +191,7 @@
         "vertragspartner2": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Geschaeftspartner.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Geschaeftspartner.json"
                 },
                 {
                     "type": "null"
@@ -206,7 +203,7 @@
         "vertragsstatus": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Vertragsstatus.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Vertragsstatus.json"
                 },
                 {
                     "type": "null"
@@ -219,7 +216,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

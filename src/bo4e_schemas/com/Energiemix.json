@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Zusammensetzung der gelieferten Energie aus den verschiedenen Primärenergieformen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Energiemix.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Energiemix JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v0.1.dev1+gff94097/src/bo4e_schemas/com/Energiemix.json>`_",
+    "description": "Zusammensetzung der gelieferten Energie aus den verschiedenen Primärenergieformen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Energiemix.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Energiemix JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Energiemix.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -13,15 +13,12 @@
             ],
             "default": null,
             "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
-            "title": " Id"
+            "title": "Id"
         },
         "_typ": {
             "const": "ENERGIEMIX",
             "default": "ENERGIEMIX",
-            "enum": [
-                "ENERGIEMIX"
-            ],
-            "title": " Typ",
+            "title": "Typ",
             "type": "string"
         },
         "_version": {
@@ -33,15 +30,15 @@
                     "type": "null"
                 }
             ],
-            "default": "0.1.dev1+gff94097",
+            "default": "202501.1.0rc1",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
-            "title": " Version"
+            "title": "Version"
         },
         "anteil": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Energieherkunft.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Energieherkunft.json"
                     },
                     "type": "array"
                 },
@@ -110,7 +107,7 @@
         "energieart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Sparte.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Sparte.json"
                 },
                 {
                     "type": "null"
@@ -162,7 +159,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Oekolabel.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Oekolabel.json"
                     },
                     "type": "array"
                 },
@@ -178,7 +175,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Oekozertifikat.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Oekozertifikat.json"
                     },
                     "type": "array"
                 },
@@ -207,7 +204,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

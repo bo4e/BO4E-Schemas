@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit diesem BO kann ein Versorgungsangebot zur Strom- oder Gasversorgung oder die Teilnahme an einer Ausschreibung\nübertragen werden. Es können verschiedene Varianten enthalten sein (z.B. ein- und mehrjährige Laufzeit).\nInnerhalb jeder Variante können Teile enthalten sein, die jeweils für eine oder mehrere Marktlokationen erstellt\nwerden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Angebot.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Angebot JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v0.1.dev1+gff94097/src/bo4e_schemas/bo/Angebot.json>`_",
+    "description": "Mit diesem BO kann ein Versorgungsangebot zur Strom- oder Gasversorgung oder die Teilnahme an einer Ausschreibung\nübertragen werden. Es können verschiedene Varianten enthalten sein (z.B. ein- und mehrjährige Laufzeit).\nInnerhalb jeder Variante können Teile enthalten sein, die jeweils für eine oder mehrere Marktlokationen erstellt\nwerden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Angebot.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Angebot JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Angebot.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -13,15 +13,12 @@
             ],
             "default": null,
             "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
-            "title": " Id"
+            "title": "Id"
         },
         "_typ": {
             "const": "ANGEBOT",
             "default": "ANGEBOT",
-            "enum": [
-                "ANGEBOT"
-            ],
-            "title": " Typ",
+            "title": "Typ",
             "type": "string"
         },
         "_version": {
@@ -33,9 +30,9 @@
                     "type": "null"
                 }
             ],
-            "default": "0.1.dev1+gff94097",
+            "default": "202501.1.0rc1",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
-            "title": " Version"
+            "title": "Version"
         },
         "anfragereferenz": {
             "anyOf": [
@@ -67,7 +64,7 @@
         "angebotsgeber": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Geschaeftspartner.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Geschaeftspartner.json"
                 },
                 {
                     "type": "null"
@@ -79,7 +76,7 @@
         "angebotsnehmer": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Geschaeftspartner.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Geschaeftspartner.json"
                 },
                 {
                     "type": "null"
@@ -118,7 +115,7 @@
         "sparte": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Sparte.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Sparte.json"
                 },
                 {
                     "type": "null"
@@ -130,7 +127,7 @@
         "unterzeichnerAngebotsgeber": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Person.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Person.json"
                 },
                 {
                     "type": "null"
@@ -142,7 +139,7 @@
         "unterzeichnerAngebotsnehmer": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Person.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Person.json"
                 },
                 {
                     "type": "null"
@@ -155,7 +152,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Angebotsvariante.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Angebotsvariante.json"
                     },
                     "type": "array"
                 },
@@ -171,7 +168,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

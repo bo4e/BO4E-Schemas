@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Abbildung eines Zeitreihenwertes bestehend aus Zeitraum, Wert und Statusinformationen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zeitreihenwert.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zeitreihenwert JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v0.1.dev1+gff94097/src/bo4e_schemas/com/Zeitreihenwert.json>`_",
+    "description": "Abbildung eines Zeitreihenwertes bestehend aus Zeitraum, Wert und Statusinformationen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zeitreihenwert.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zeitreihenwert JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Zeitreihenwert.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -13,15 +13,12 @@
             ],
             "default": null,
             "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
-            "title": " Id"
+            "title": "Id"
         },
         "_typ": {
             "const": "ZEITREIHENWERT",
             "default": "ZEITREIHENWERT",
-            "enum": [
-                "ZEITREIHENWERT"
-            ],
-            "title": " Typ",
+            "title": "Typ",
             "type": "string"
         },
         "_version": {
@@ -33,14 +30,14 @@
                     "type": "null"
                 }
             ],
-            "default": "0.1.dev1+gff94097",
+            "default": "202501.1.0rc1",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
-            "title": " Version"
+            "title": "Version"
         },
         "status": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Messwertstatus.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Messwertstatus.json"
                 },
                 {
                     "type": "null"
@@ -52,7 +49,7 @@
         "statuszusatz": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Messwertstatuszusatz.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Messwertstatuszusatz.json"
                 },
                 {
                     "type": "null"
@@ -78,7 +75,7 @@
         "zeitraum": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Zeitraum.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
@@ -91,7 +88,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

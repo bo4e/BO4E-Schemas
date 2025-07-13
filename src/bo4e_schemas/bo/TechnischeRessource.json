@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Object containing information about a technische Ressource\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/TechnischeRessource.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `TechnischeRessource JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v0.1.dev1+gff94097/src/bo4e_schemas/bo/TechnischeRessource.json>`_",
+    "description": "Object containing information about a technische Ressource\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/TechnischeRessource.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `TechnischeRessource JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/TechnischeRessource.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -13,15 +13,12 @@
             ],
             "default": null,
             "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
-            "title": " Id"
+            "title": "Id"
         },
         "_typ": {
             "const": "TECHNISCHERESSOURCE",
             "default": "TECHNISCHERESSOURCE",
-            "enum": [
-                "TECHNISCHERESSOURCE"
-            ],
-            "title": " Typ",
+            "title": "Typ",
             "type": "string"
         },
         "_version": {
@@ -33,14 +30,14 @@
                     "type": "null"
                 }
             ],
-            "default": "0.1.dev1+gff94097",
+            "default": "202501.1.0rc1",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
-            "title": " Version"
+            "title": "Version"
         },
         "emobilitaetsart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/EMobilitaetsart.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/EMobilitaetsart.json"
                 },
                 {
                     "type": "null"
@@ -52,7 +49,7 @@
         "erzeugungsart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Erzeugungsart.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Erzeugungsart.json"
                 },
                 {
                     "type": "null"
@@ -78,7 +75,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Lokationszuordnung.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Lokationszuordnung.json"
                     },
                     "type": "array"
                 },
@@ -93,7 +90,7 @@
         "nennleistungabgabe": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -105,7 +102,7 @@
         "nennleistungaufnahme": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -117,7 +114,7 @@
         "speicherart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Speicherart.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Speicherart.json"
                 },
                 {
                     "type": "null"
@@ -129,7 +126,7 @@
         "speicherkapazitaet": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -154,7 +151,7 @@
         "technischeRessourceNutzung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/TechnischeRessourceNutzung.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/TechnischeRessourceNutzung.json"
                 },
                 {
                     "type": "null"
@@ -166,7 +163,7 @@
         "technischeRessourceVerbrauchsart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/TechnischeRessourceVerbrauchsart.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/TechnischeRessourceVerbrauchsart.json"
                 },
                 {
                     "type": "null"
@@ -191,7 +188,7 @@
         "waermenutzung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Waermenutzung.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Waermenutzung.json"
                 },
                 {
                     "type": "null"
@@ -230,7 +227,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

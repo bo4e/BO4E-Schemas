@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit diesem Objekt können Geschäftspartner übertragen werden.\nSowohl Unternehmen, als auch Privatpersonen können Geschäftspartner sein.\nHinweis: \"Marktteilnehmer\" haben ein eigenes BO, welches sich von diesem BO ableitet.\nHier sollte daher keine Zuordnung zu Marktrollen erfolgen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Geschaeftspartner.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Geschaeftspartner JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v0.1.dev1+gff94097/src/bo4e_schemas/bo/Geschaeftspartner.json>`_",
+    "description": "Mit diesem Objekt können Geschäftspartner übertragen werden.\nSowohl Unternehmen, als auch Privatpersonen können Geschäftspartner sein.\nHinweis: \"Marktteilnehmer\" haben ein eigenes BO, welches sich von diesem BO ableitet.\nHier sollte daher keine Zuordnung zu Marktrollen erfolgen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Geschaeftspartner.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Geschaeftspartner JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Geschaeftspartner.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -13,15 +13,12 @@
             ],
             "default": null,
             "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
-            "title": " Id"
+            "title": "Id"
         },
         "_typ": {
             "const": "GESCHAEFTSPARTNER",
             "default": "GESCHAEFTSPARTNER",
-            "enum": [
-                "GESCHAEFTSPARTNER"
-            ],
-            "title": " Typ",
+            "title": "Typ",
             "type": "string"
         },
         "_version": {
@@ -33,14 +30,14 @@
                     "type": "null"
                 }
             ],
-            "default": "0.1.dev1+gff94097",
+            "default": "202501.1.0rc1",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
-            "title": " Version"
+            "title": "Version"
         },
         "adresse": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Adresse.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Adresse.json"
                 },
                 {
                     "type": "null"
@@ -65,7 +62,7 @@
         "anrede": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Anrede.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Anrede.json"
                 },
                 {
                     "type": "null"
@@ -78,7 +75,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/bo/Person.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Person.json"
                     },
                     "type": "array"
                 },
@@ -93,7 +90,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Geschaeftspartnerrolle.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Geschaeftspartnerrolle.json"
                     },
                     "type": "array"
                 },
@@ -148,7 +145,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/com/Kontaktweg.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Kontaktweg.json"
                     },
                     "type": "array"
                 },
@@ -189,7 +186,7 @@
         "organisationstyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Organisationstyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Organisationstyp.json"
                 },
                 {
                     "type": "null"
@@ -201,7 +198,7 @@
         "titel": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/enum/Titel.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Titel.json"
                 },
                 {
                     "type": "null"
@@ -253,7 +250,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/main/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
