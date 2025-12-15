@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Die Sigmoid-Funktion, beispielsweise zur Berechnung eines Leistungspreises hat die Form:\nLP=A/(1+(P/B)^C)+D\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Sigmoidparameter.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Sigmoidparameter JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Sigmoidparameter.json>`_",
+    "description": "Die Sigmoid-Funktion, beispielsweise zur Berechnung eines Leistungspreises hat die Form:\nLP=A/(1+(P/B)^C)+D\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Sigmoidparameter.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Sigmoidparameter JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Sigmoidparameter.json>`_",
     "properties": {
         "A": {
             "anyOf": [
@@ -86,7 +86,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -94,7 +94,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

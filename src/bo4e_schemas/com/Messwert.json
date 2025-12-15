@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Modellierung einer Unterschrift, z.B. für Verträge, Angebote etc.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Unterschrift.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Unterschrift JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Unterschrift.json>`_",
+    "description": "Abbildung eines Messwertes mit Stati, Zeitpunkt und Wert.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Messwert.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Messwert JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Messwert.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "UNTERSCHRIFT",
-            "default": "UNTERSCHRIFT",
+            "const": "MESSWERT",
+            "default": "MESSWERT",
             "title": "Typ",
             "type": "string"
         },
@@ -34,7 +34,43 @@
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "datum": {
+        "messwertstatus": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Messwertstatus.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Gibt den Status des Messwerts an."
+        },
+        "messwertstatuszusatz": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Messwertstatuszusatz.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Gibt den Status Zusatz des Messwerts an."
+        },
+        "wert": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Menge.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Gibt die gemessene Menge an."
+        },
+        "zeitpunkt": {
             "anyOf": [
                 {
                     "format": "date-time",
@@ -45,34 +81,8 @@
                 }
             ],
             "default": null,
-            "description": "Datum der Unterschrift",
-            "title": "Datum"
-        },
-        "name": {
-            "anyOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Name des Unterschreibers",
-            "title": "Name"
-        },
-        "ort": {
-            "anyOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Ort, an dem die Unterschrift geleistet wird",
-            "title": "Ort"
+            "description": "Gibt den Zeitpunkt des Messwerts an.",
+            "title": "Zeitpunkt"
         },
         "zusatzAttribute": {
             "anyOf": [
@@ -90,6 +100,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "Unterschrift",
+    "title": "Messwert",
     "type": "object"
 }

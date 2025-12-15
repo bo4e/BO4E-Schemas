@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Über Rechnungspositionen werden Rechnungen strukturiert.\nIn einem Rechnungsteil wird jeweils eine in sich geschlossene Leistung abgerechnet.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Rechnungsposition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Rechnungsposition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Rechnungsposition.json>`_",
+    "description": "Über Rechnungspositionen werden Rechnungen strukturiert.\nIn einem Rechnungsteil wird jeweils eine in sich geschlossene Leistung abgerechnet.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Rechnungsposition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Rechnungsposition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Rechnungsposition.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -50,7 +50,7 @@
         "artikelnummer": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/BDEWArtikelnummer.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/BDEWArtikelnummer.json"
                 },
                 {
                     "type": "null"
@@ -62,7 +62,7 @@
         "einzelpreis": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Preis.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Preis.json"
                 },
                 {
                     "type": "null"
@@ -71,51 +71,34 @@
             "default": null,
             "description": "Der Preis für eine Einheit der energetischen Menge"
         },
-        "lieferungBis": {
+        "gesamtpreis": {
             "anyOf": [
                 {
-                    "format": "date-time",
-                    "type": "string"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Betrag.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Ende der Lieferung für die abgerechnete Leistung (exklusiv)",
-            "title": "Lieferungbis"
+            "description": "Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus zeitbezogeneMenge).\nZ.B. 12,60€ * 120 kW * 3/12 (für 3 Monate)."
         },
-        "lieferungVon": {
+        "lieferungszeitraum": {
             "anyOf": [
                 {
-                    "format": "date-time",
-                    "type": "string"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Start der Lieferung für die abgerechnete Leistung (inklusiv)",
-            "title": "Lieferungvon"
-        },
-        "lokationsId": {
-            "anyOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Marktlokation, die zu dieser Position gehört",
-            "title": "Lokationsid"
+            "description": "Zeitraum der Lieferung für die abgerechnete Leistung"
         },
         "positionsMenge": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -150,34 +133,10 @@
             "description": "Bezeichung für die abgerechnete Position",
             "title": "Positionstext"
         },
-        "teilrabattNetto": {
+        "steuerbetrag": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Nettobetrag für den Rabatt dieser Position"
-        },
-        "teilsummeNetto": {
-            "anyOf": [
-                {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus zeitbezogeneMenge).\nZ.B. 12,60€ * 120 kW * 3/12 (für 3 Monate)."
-        },
-        "teilsummeSteuer": {
-            "anyOf": [
-                {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Steuerbetrag.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Steuerbetrag.json"
                 },
                 {
                     "type": "null"
@@ -189,7 +148,7 @@
         "zeitbezogeneMenge": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -201,7 +160,7 @@
         "zeiteinheit": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Mengeneinheit.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Mengeneinheit.json"
                 },
                 {
                     "type": "null"
@@ -214,7 +173,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

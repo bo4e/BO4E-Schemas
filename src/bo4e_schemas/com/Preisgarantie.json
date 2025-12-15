@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Definition für eine Preisgarantie mit der Möglichkeit verschiedener Ausprägungen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Preisgarantie.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Preisgarantie JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Preisgarantie.json>`_",
+    "description": "Definition für eine Preisgarantie mit der Möglichkeit verschiedener Ausprägungen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Preisgarantie.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Preisgarantie JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Preisgarantie.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -50,7 +50,7 @@
         "preisgarantietyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Preisgarantietyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Preisgarantietyp.json"
                 },
                 {
                     "type": "null"
@@ -62,7 +62,7 @@
         "zeitlicheGueltigkeit": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Zeitraum.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
@@ -75,7 +75,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

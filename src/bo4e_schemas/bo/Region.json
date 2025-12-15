@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Modellierung einer Region als Menge von Kriterien, die eine Region beschreiben\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Region.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Region JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Region.json>`_",
+    "description": "Modellierung einer Region als Menge von Kriterien, die eine Region beschreiben\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Region.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Region JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Region.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -51,7 +51,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Regionskriterium.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Regionskriterium.json"
                     },
                     "type": "array"
                 },
@@ -67,7 +67,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Regionskriterium.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Regionskriterium.json"
                     },
                     "type": "array"
                 },
@@ -83,7 +83,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

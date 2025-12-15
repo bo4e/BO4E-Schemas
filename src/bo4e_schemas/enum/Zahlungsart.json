@@ -1,0 +1,9 @@
+{
+    "description": "Gibt an, um was für eine Zahlungsart es sich handelt.",
+    "enum": [
+        "SEPA_LASTSCHRIFT",
+        "UEBERWEISUNG"
+    ],
+    "title": "Zahlungsart",
+    "type": "string"
+}

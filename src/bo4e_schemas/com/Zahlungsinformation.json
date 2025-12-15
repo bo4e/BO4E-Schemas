@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Abbildung eines zeitlich abgegrenzten Verbrauchs\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Verbrauch.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Verbrauch JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Verbrauch.json>`_",
+    "description": "Mit dieser Komponente kann eine einzelne Zahlungsinformation dargestellt werden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zahlungsinformation.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zahlungsinformation JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zahlungsinformation.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "VERBRAUCH",
-            "default": "VERBRAUCH",
+            "const": "ZAHLUNGSINFORMATION",
+            "default": "ZAHLUNGSINFORMATION",
             "title": "Typ",
             "type": "string"
         },
@@ -30,49 +30,11 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "einheit": {
-            "anyOf": [
-                {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Mengeneinheit.json"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Gibt die Einheit zum jeweiligen Wert an"
-        },
-        "enddatum": {
-            "anyOf": [
-                {
-                    "format": "date-time",
-                    "type": "string"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird.\nEin ZeitPUNKT kann mit start==ende angegeben werden.",
-            "title": "Enddatum"
-        },
-        "messwertstatus": {
-            "anyOf": [
-                {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Messwertstatus.json"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Messwertstatus includes the plausibility of the value"
-        },
-        "obisKennzahl": {
+        "betreff": {
             "anyOf": [
                 {
                     "type": "string"
@@ -82,13 +44,12 @@
                 }
             ],
             "default": null,
-            "description": "Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird, z.B. '1-0:",
-            "title": "Obiskennzahl"
+            "description": "Eine konstante Betreffzeile für Überweisungen",
+            "title": "Betreff"
         },
-        "startdatum": {
+        "bic": {
             "anyOf": [
                 {
-                    "format": "date-time",
                     "type": "string"
                 },
                 {
@@ -96,28 +57,65 @@
                 }
             ],
             "default": null,
-            "description": "Inklusiver Beginn des Zeitraumes, für den der Verbrauch angegeben wird",
-            "title": "Startdatum"
+            "description": "Eine BIC-Nummer",
+            "title": "Bic"
         },
-        "wert": {
+        "iban": {
             "anyOf": [
                 {
-                    "format": "decimal",
-                    "type": "number"
+                    "type": "string"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Gibt den absoluten Wert der Menge an",
-            "title": "Wert"
+            "description": "Eine IBAN-Nummer",
+            "title": "Iban"
+        },
+        "kontoinhaber": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Der Name des Kontoinhabers",
+            "title": "Kontoinhaber"
+        },
+        "sepaReferenz": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Eine SEPA-Referenz",
+            "title": "Separeferenz"
+        },
+        "zahlungsart": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Zahlungsart.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Die Zahlungsart dieser Zahlungsinformation"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
@@ -129,6 +127,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "Verbrauch",
+    "title": "Zahlungsinformation",
     "type": "object"
 }

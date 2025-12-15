@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Object containing information about a Netzlokation\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Netzlokation.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Netzlokation JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Netzlokation.json>`_",
+    "description": "Object containing information about a Netzlokation\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Netzlokation.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Netzlokation JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Netzlokation.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,14 +30,14 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
         "eigenschaftMsbLokation": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Marktrolle.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Marktrolle.json"
                 },
                 {
                     "type": "null"
@@ -63,7 +63,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Konfigurationsprodukt.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Konfigurationsprodukt.json"
                     },
                     "type": "array"
                 },
@@ -92,7 +92,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Lokationszuordnung.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Lokationszuordnung.json"
                     },
                     "type": "array"
                 },
@@ -107,7 +107,7 @@
         "netzanschlussleistung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Menge.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
@@ -145,7 +145,7 @@
         "sparte": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Sparte.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Sparte.json"
                 },
                 {
                     "type": "null"
@@ -170,7 +170,7 @@
         "verwendungszweck": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/VerwendungszweckProMarktrolle.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/VerwendungszweckProMarktrolle.json"
                 },
                 {
                     "type": "null"
@@ -183,7 +183,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

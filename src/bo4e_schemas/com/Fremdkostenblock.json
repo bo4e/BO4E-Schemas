@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Komponente zur Abbildung eines Kostenblocks in den Fremdkosten\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Fremdkostenblock.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Fremdkostenblock JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Fremdkostenblock.json>`_",
+    "description": "Komponente zur Abbildung eines Kostenblocks in den Fremdkosten\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Fremdkostenblock.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Fremdkostenblock JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Fremdkostenblock.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -51,7 +51,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Fremdkostenposition.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Fremdkostenposition.json"
                     },
                     "type": "array"
                 },
@@ -66,7 +66,7 @@
         "summeKostenblock": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Betrag.json"
                 },
                 {
                     "type": "null"
@@ -79,7 +79,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

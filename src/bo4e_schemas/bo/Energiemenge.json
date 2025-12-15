@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Abbildung von Mengen, die Lokationen zugeordnet sind\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Energiemenge.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Energiemenge JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Energiemenge.json>`_",
+    "description": "Abbildung von Mengen, die Lokationen zugeordnet sind\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Energiemenge.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Energiemenge JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Energiemenge.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,27 +30,11 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "energieverbrauch": {
-            "anyOf": [
-                {
-                    "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Verbrauch.json"
-                    },
-                    "type": "array"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Gibt den Verbrauch in einer Zeiteinheit an",
-            "title": "Energieverbrauch"
-        },
-        "lokationsId": {
+        "beschreibung": {
             "anyOf": [
                 {
                     "type": "string"
@@ -60,26 +44,51 @@
                 }
             ],
             "default": null,
-            "description": "Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört",
-            "title": "Lokationsid"
+            "description": "Ergänzende Beschreibung zur Energiemenge",
+            "title": "Beschreibung"
         },
-        "lokationstyp": {
+        "menge": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Lokationstyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Menge.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Gibt an, ob es sich um eine Markt- oder Messlokation handelt"
+            "description": "Die angefallene/gemessene Menge"
+        },
+        "obisKennzahl": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Die OBIS-Kennzahl der Energiemenge",
+            "title": "Obiskennzahl"
+        },
+        "zeitraum": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zeitraum.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Zeitraum, in dem die Energiemenge angefallen ist/gemessen wurde"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Modell für die Abbildung von Rechnungen und Netznutzungsrechnungen im Kontext der Energiewirtschaft;\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Rechnung.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Rechnung JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Rechnung.json>`_",
+    "description": "Modell für die Abbildung von Rechnungen und Netznutzungsrechnungen im Kontext der Energiewirtschaft;\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Rechnung.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Rechnung JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Rechnung.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,9 +30,45 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
+        },
+        "aktuellerVerbrauch": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Energiemenge.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Verbrauch des abgerechneten Zeitraums, Pflicht für Rechnungen gemäß EnWG § 40"
+        },
+        "anfangszaehlerstand": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Energiemenge.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Für Verbrauchsbasierte Rechnungen der Zählerstand zur Beginn des abgerechneten Zeitraums, Pflicht für Rechnungen gemäß EnWG § 40"
+        },
+        "endzaehlerstand": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Energiemenge.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Für Verbrauchsbasierte Rechnungen der Zählerstand zum Ende des abgerechneten Zeitraums, Pflicht für Rechnungen gemäß EnWG § 40"
         },
         "faelligkeitsdatum": {
             "anyOf": [
@@ -48,10 +84,22 @@
             "description": "Zu diesem Datum ist die Zahlung fällig",
             "title": "Faelligkeitsdatum"
         },
+        "fremdkosten": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Fremdkosten.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Zur Ausweisung der in die Kalkulation eingeflossenen Preise gemäß EnWG § 40"
+        },
         "gesamtbrutto": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Betrag.json"
                 },
                 {
                     "type": "null"
@@ -63,7 +111,7 @@
         "gesamtnetto": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Betrag.json"
                 },
                 {
                     "type": "null"
@@ -75,7 +123,7 @@
         "gesamtsteuer": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Betrag.json"
                 },
                 {
                     "type": "null"
@@ -123,10 +171,34 @@
             "description": "Kennzeichnung, ob es sich um eine Stornorechnung handelt;\nim Falle \"true\" findet sich im Attribut \"originalrechnungsnummer\" die Nummer der Originalrechnung.",
             "title": "Iststorno"
         },
+        "jahresverbrauch": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Energiemenge.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "ggf. auf einen Vergleichszeitraum hochgerechneter Verbrauch des abgerechneten Zeitraums zu Vergleichszwecken mit dem Vorjahr, gemäß EnWG § 40"
+        },
+        "kaeuferreferenz": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Kaeuferreferenz"
+        },
         "marktlokation": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Marktlokation.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Marktlokation.json"
                 },
                 {
                     "type": "null"
@@ -138,7 +210,7 @@
         "messlokation": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Messlokation.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Messlokation.json"
                 },
                 {
                     "type": "null"
@@ -147,10 +219,34 @@
             "default": null,
             "description": "Messlokation, auf die sich die Rechnung bezieht"
         },
+        "messstellenbetreiber": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Marktteilnehmer.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "der Messtellenbetreiber an der Lieferstelle, relevant für Rechnungen gemäß EnWG § 40"
+        },
+        "netzbetreiber": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Marktteilnehmer.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "der Netzbetreiber an der Lieferstelle, relevant für Rechnungen gemäß EnWG § 40"
+        },
         "netznutzungrechnungsart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/NetznutzungRechnungsart.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/NetznutzungRechnungsart.json"
                 },
                 {
                     "type": "null"
@@ -162,7 +258,7 @@
         "netznutzungrechnungstyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/NetznutzungRechnungstyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/NetznutzungRechnungstyp.json"
                 },
                 {
                     "type": "null"
@@ -184,17 +280,17 @@
             "description": "Im Falle einer Stornorechnung (storno = true) steht hier die Rechnungsnummer der stornierten Rechnung",
             "title": "Originalrechnungsnummer"
         },
-        "rabattBrutto": {
+        "rabattNetto": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Betrag.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Gesamtrabatt auf den Bruttobetrag"
+            "description": "Gesamtrabatt auf den Nettobetrag"
         },
         "rechnungsdatum": {
             "anyOf": [
@@ -213,26 +309,26 @@
         "rechnungsempfaenger": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Geschaeftspartner.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Geschaeftspartner.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner verlinkten Marktteilnehmer"
+            "description": "Der Aussteller der Rechnung. Die Rollencodenummer kennt man über den im Geschäftspartner verlinkten Marktteilnehmer."
         },
         "rechnungsersteller": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Geschaeftspartner.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Geschaeftspartner.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner verlinkten Marktteilnehmer"
+            "description": "Der Aussteller der Rechnung. Die Rollencodenummer kennt man über den im Geschäftspartner verlinkten Marktteilnehmer."
         },
         "rechnungsnummer": {
             "anyOf": [
@@ -250,7 +346,7 @@
         "rechnungsperiode": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Zeitraum.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
@@ -263,7 +359,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Rechnungsposition.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Rechnungsposition.json"
                     },
                     "type": "array"
                 },
@@ -278,7 +374,7 @@
         "rechnungsstatus": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Rechnungsstatus.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Rechnungsstatus.json"
                 },
                 {
                     "type": "null"
@@ -303,7 +399,7 @@
         "rechnungstyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Rechnungstyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Rechnungstyp.json"
                 },
                 {
                     "type": "null"
@@ -312,10 +408,26 @@
             "default": null,
             "description": "Ein kontextbezogender Rechnungstyp, z.B. Netznutzungsrechnung"
         },
+        "referenzverbraeuche": {
+            "anyOf": [
+                {
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Energiemenge.json"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Verbräuche von Referenzkundengruppen gemäß EnWG § 40",
+            "title": "Referenzverbraeuche"
+        },
         "sparte": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Sparte.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Sparte.json"
                 },
                 {
                     "type": "null"
@@ -328,7 +440,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Steuerbetrag.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Steuerbetrag.json"
                     },
                     "type": "array"
                 },
@@ -340,22 +452,97 @@
             "description": "Eine Liste mit Steuerbeträgen pro Steuerkennzeichen/Steuersatz;\ndie Summe dieser Beträge ergibt den Wert für gesamtsteuer.",
             "title": "Steuerbetraege"
         },
-        "vorausgezahlt": {
+        "teilrechnungen": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Rechnung.json"
+                    },
+                    "type": "array"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert"
+            "description": "Rechnungen, die durch diese Rechnung zusammengefasst werden",
+            "title": "Teilrechnungen"
+        },
+        "vertrag": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Vertrag.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "enthält Informationen über den der Rechnung zugrundeliegenden Vertrag für Rechnungen nach EnWG § 40"
+        },
+        "vorauszahlungen": {
+            "anyOf": [
+                {
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Vorauszahlung.json"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert",
+            "title": "Vorauszahlungen"
+        },
+        "vorjahresverbrauch": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Energiemenge.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "ggf. auf einen Vergleichszeitraum hochgerechneter Verbrauch des vorherigen Jahres zu Vergleichszwecken mit dem aktuellen Jahr, gemäß EnWG § 40"
+        },
+        "zaehler": {
+            "anyOf": [
+                {
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Zaehler.json"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Zaehler"
+        },
+        "zahlungsinformationen": {
+            "anyOf": [
+                {
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zahlungsinformation.json"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Informationen wie eine Rechnung bezahlt werden soll",
+            "title": "Zahlungsinformationen"
         },
         "zuZahlen": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Betrag.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Betrag.json"
                 },
                 {
                     "type": "null"
@@ -364,11 +551,22 @@
             "default": null,
             "description": "Der zu zahlende Betrag, der sich aus (gesamtbrutto - vorausbezahlt - rabattBrutto) ergibt"
         },
+        "zukuenftigerAbschlag": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Betrag.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

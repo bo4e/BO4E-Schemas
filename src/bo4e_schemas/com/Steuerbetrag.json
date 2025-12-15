@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Abbildung eines Steuerbetrages.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Steuerbetrag.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Steuerbetrag JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Steuerbetrag.json>`_",
+    "description": "Abbildung eines Steuerbetrages.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Steuerbetrag.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Steuerbetrag JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Steuerbetrag.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc1",
+            "default": "202501.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -48,17 +48,31 @@
             "description": "Nettobetrag für den die Steuer berechnet wurde. Z.B. 100",
             "title": "Basiswert"
         },
-        "steuerkennzeichen": {
+        "steuerart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Steuerkennzeichen.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Steuerart.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Kennzeichnung des Steuersatzes, bzw. Verfahrens."
+            "description": "Kennzeichnung der Steuerart, bzw. Verfahrens."
+        },
+        "steuersatz": {
+            "anyOf": [
+                {
+                    "format": "decimal",
+                    "type": "number"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Angabe des Steuersatzes in %",
+            "title": "Steuersatz"
         },
         "steuerwert": {
             "anyOf": [
@@ -74,10 +88,10 @@
             "description": "Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)",
             "title": "Steuerwert"
         },
-        "waehrung": {
+        "waehrungscode": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/enum/Waehrungscode.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Waehrungscode.json"
                 },
                 {
                     "type": "null"
@@ -90,7 +104,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

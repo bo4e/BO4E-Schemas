@@ -1,0 +1,10 @@
+{
+    "description": "Zur Kennzeichnung verschiedener Steuerarten.",
+    "enum": [
+        "RCV",
+        "UST",
+        "VST"
+    ],
+    "title": "Steuerart",
+    "type": "string"
+}
