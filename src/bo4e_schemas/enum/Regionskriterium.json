@@ -31,10 +31,10 @@
         "POSTORT",
         "EINWOHNERZAHL_GEMEINDE",
         "EINWOHNERZAHL_ORT",
-        "KM_UMKREIS",
+        "PLZ_KM_UMKREIS",
         "BUNDESWEIT",
         "PLZ_BEREICH"
     ],
-    "title": "Regionskriteriumtyp",
+    "title": "Regionskriterium",
     "type": "string"
 }

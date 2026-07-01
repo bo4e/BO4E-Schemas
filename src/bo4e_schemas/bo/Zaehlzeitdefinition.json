@@ -1,0 +1,109 @@
+{
+    "additionalProperties": true,
+    "description": "Beschreibt, zu welchen Zeiten welche Register aktiv sind.\n\nDie `Zaehlzeitdefinition` ist unabhängig von konkreter Messhardware: sie weiß nichts über\n`Zaehlwerk`e oder `Zaehler` an einer Messlokation und definiert lediglich abstrakt, welche\nRegister-Codes (z.B. \"HT\", \"NT\", aber prinzipiell beliebige freie Zeichenketten) zu welchen\nTageszeiten gelten.\n\nDie zeitliche Modellierung ist dreistufig geschachtelt:\n\n1. ``saisons`` – ein Jahr kann in unterschiedliche Saisons aufgeteilt sein (z.B. Sommer/Winter).\n   Welche Tage zu welcher Saison gehören, gibt das `saisonprofil` an.\n2. Pro Saison: ``tagtypen`` – verschiedene Tagtypen (z.B. Werktag, Wochenende, Feiertag)\n   können unterschiedliche Schaltschemata haben. Welche Tage als Feiertag gelten, gibt der\n   `feiertagskalender` an.\n3. Pro Tagtyp: ``umschaltzeiten`` – die eigentlichen Uhrzeiten, zu denen auf welches Register\n   umgeschaltet wird.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Zaehlzeitdefinition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zaehlzeitdefinition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Zaehlzeitdefinition.json>`_",
+    "properties": {
+        "_id": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Eine generische ID, die für eigene Zwecke genutzt werden kann.\nZ.B. könnten hier UUIDs aus einer Datenbank stehen oder URLs zu einem Backend-System.",
+            "title": "Id"
+        },
+        "_typ": {
+            "const": "ZAEHLZEITDEFINITION",
+            "default": "ZAEHLZEITDEFINITION",
+            "title": "Typ",
+            "type": "string"
+        },
+        "_version": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": "202601.0.0",
+            "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
+            "title": "Version"
+        },
+        "feiertagskalender": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Bezeichnung des Feiertagskalenders, nach dem `FEIERTAGS`-Tagtypen aufgelöst werden (z.B. \"BDEW\",\nlandes- oder gemeindespezifische Kalender). Frei wählbare Zeichenkette, deren Bedeutung zwischen\nden Marktpartnern abgestimmt sein muss.",
+            "title": "Feiertagskalender"
+        },
+        "saisonprofil": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Bezeichnung des Saisonprofils, das die Datumsgrenzen der in `saisons` referenzierten Saisons\nfestlegt (z.B. \"Sommer/Winter\").",
+            "title": "Saisonprofil"
+        },
+        "saisons": {
+            "anyOf": [
+                {
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zaehlzeitsaison.json"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Die Schaltschemata, gruppiert nach Saison.",
+            "title": "Saisons"
+        },
+        "urheber": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Marktteilnehmer.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Der Marktteilnehmer, der diese Zählzeitdefinition herausgegeben hat (typischerweise Netzbetreiber\noder Lieferant). Identifiziert zusammen mit einer fachlichen Gültigkeit, welche Definition zu welchem\nZeitpunkt gilt."
+        },
+        "zusatzAttribute": {
+            "anyOf": [
+                {
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Zusatzattribute"
+        }
+    },
+    "title": "Zaehlzeitdefinition",
+    "type": "object"
+}

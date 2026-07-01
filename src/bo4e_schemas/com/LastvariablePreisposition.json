@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Informationen zum Lastprofil.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Lastprofil.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Lastprofil JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/{__gh_version__}/src/bo4e_schemas/com/Lastprofil.json>`_",
+    "description": "Modelliert eine lastvariable Preisposition.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/LastvariablePreisposition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `LastvariablePreisposition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/LastvariablePreisposition.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "LASTPROFIL",
-            "default": "LASTPROFIL",
+            "const": "LASTVARIABLEPREISPOSITION",
+            "default": "LASTVARIABLEPREISPOSITION",
             "title": "Typ",
             "type": "string"
         },
@@ -44,76 +44,84 @@
                 }
             ],
             "default": null,
+            "description": "Eine (beliebige) Bezeichnung für die Preisposition.",
             "title": "Bezeichnung"
         },
-        "herausgeber": {
+        "preisBezugseinheit": {
             "anyOf": [
                 {
-                    "type": "string"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Mengeneinheit.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "title": "Herausgeber"
+            "description": "Angabe, für welche Bezugsgröße die Preise in den Preisstaffeln gelten. Z.B. kWh."
         },
-        "istEinspeisung": {
+        "preisWaehrungseinheit": {
             "anyOf": [
                 {
-                    "type": "boolean"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Waehrungseinheit.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "title": "Isteinspeisung"
+            "description": "Währungseinheit für die Preise in allen Preisstaffeln, z.B. Euro oder Ct."
         },
-        "profilart": {
+        "preisreferenz": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Profilart.json"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null
-        },
-        "profilschar": {
-            "anyOf": [
-                {
-                    "type": "string"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Preisreferenz.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "title": "Profilschar"
+            "description": "Die Referenz worauf sich der Preis bezieht.\nDie explizite Einheit wird durch das Feld `preis_bezugseinheit` angegeben."
         },
-        "tagesparameter": {
+        "preisstaffeln": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Tagesparameter.json"
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Preisstaffel.json"
+                    },
+                    "type": "array"
                 },
                 {
                     "type": "null"
                 }
             ],
-            "default": null
+            "default": null,
+            "description": "Preisstaffeln, die zu dieser Preisposition gehören",
+            "title": "Preisstaffeln"
         },
-        "verfahren": {
+        "staffelgrenzeneinheit": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Profilverfahren.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Mengeneinheit.json"
                 },
                 {
                     "type": "null"
                 }
             ],
-            "default": null
+            "default": null,
+            "description": "Die Einheit, in denen die Staffelgrenzen in den Preisstaffeln angegeben sind."
+        },
+        "tarifkalkulationsmethode": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Tarifkalkulationsmethode.json"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Das Modell, das der Preisbildung zugrunde liegt"
         },
         "zusatzAttribute": {
             "anyOf": [
@@ -131,6 +139,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "Lastprofil",
+    "title": "LastvariablePreisposition",
     "type": "object"
 }

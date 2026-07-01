@@ -1,0 +1,11 @@
+{
+    "description": "Mit dieser Aufzählung können Operationen festgelegt werden.",
+    "enum": [
+        "ADDITION",
+        "SUBTRAKTION",
+        "MULTIPLIKATION",
+        "DIVISION"
+    ],
+    "title": "Operator",
+    "type": "string"
+}

@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit dieser Komponente können regionale Gültigkeiten, z.B. für Tarife, Zu- und Abschläge und Preise definiert werden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/RegionaleGueltigkeit.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `RegionaleGueltigkeit JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_",
+    "description": "Mit dieser Komponente wird ein aus mehreren Positionen zusammengesetzter Preis regionsaufgelöst dargestellt.\nZu jedem Zeitpunkt darf es nur eine gültige Region und einen gültigen Preis geben.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Regionspreis.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Regionspreis JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Regionspreis.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "REGIONALEGUELTIGKEIT",
-            "default": "REGIONALEGUELTIGKEIT",
+            "const": "REGIONSPREIS",
+            "default": "REGIONSPREIS",
             "title": "Typ",
             "type": "string"
         },
@@ -30,27 +30,15 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc2",
+            "default": "202601.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "gueltigkeitstyp": {
-            "anyOf": [
-                {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Gueltigkeitstyp.json"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Unterscheidung ob Positivliste oder Negativliste übertragen wird"
-        },
-        "kriteriumsWerte": {
+        "regionszeitscheiben": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/KriteriumWert.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Regionszeitscheibe.json"
                     },
                     "type": "array"
                 },
@@ -59,14 +47,30 @@
                 }
             ],
             "default": null,
-            "description": "Hier stehen die Kriterien, die die regionale Gültigkeit festlegen",
-            "title": "Kriteriumswerte"
+            "description": "Eine Liste von mit Zeitscheiben versehenen Regionen.\nDie Zeitscheiben sollten sich nicht überschneiden.",
+            "title": "Regionszeitscheiben"
+        },
+        "tarifpreiszeitscheiben": {
+            "anyOf": [
+                {
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Tarifpreiszeitscheibe.json"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Eine Liste von mit Zeitscheiben versehenen Tarifpreisen.\nDie Zeitscheiben sollten sich nicht überschneiden.\nDie Tarifpreise sind aus mehreren Tarifpreispositionen zusammengesetzt.",
+            "title": "Tarifpreiszeitscheiben"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
@@ -78,6 +82,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "RegionaleGueltigkeit",
+    "title": "Regionspreis",
     "type": "object"
 }

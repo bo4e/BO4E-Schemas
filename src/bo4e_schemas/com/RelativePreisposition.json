@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Abbildung einer Preisgarantie mit regionaler Abgrenzung\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/RegionalePreisgarantie.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `RegionalePreisgarantie JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/RegionalePreisgarantie.json>`_",
+    "description": "Modelliert eine relative Preisposition.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/RelativePreisposition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `RelativePreisposition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/RelativePreisposition.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "REGIONALEPREISGARANTIE",
-            "default": "REGIONALEPREISGARANTIE",
+            "const": "RELATIVEPREISPOSITION",
+            "default": "RELATIVEPREISPOSITION",
             "title": "Typ",
             "type": "string"
         },
@@ -30,11 +30,11 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc2",
+            "default": "202601.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "beschreibung": {
+        "bezeichnung": {
             "anyOf": [
                 {
                     "type": "string"
@@ -44,50 +44,41 @@
                 }
             ],
             "default": null,
-            "description": "Freitext zur Beschreibung der Preisgarantie.",
-            "title": "Beschreibung"
+            "description": "Eine (beliebige) Bezeichnung für die Preisposition.",
+            "title": "Bezeichnung"
         },
-        "preisgarantietyp": {
+        "idReferenz": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/enum/Preisgarantietyp.json"
+                    "type": "string"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Festlegung, auf welche Preisbestandteile die Garantie gewährt wird."
+            "description": "Referenziert auf eine andere Preisposition.\nDie Referenz bezieht sich auf das technische Feld `_id`, da es sich hier um eine technische Lösung handelt\nund der Wert selbst keine fachliche Bedeutung hat.\nDas `_id` Feld der unterschiedlichen Preispositionen muss innerhalb einer `Tarifpreiszeitscheibe`\nentsprechend unique sein.",
+            "title": "Idreferenz"
         },
-        "regionaleGueltigkeit": {
+        "wert": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/RegionaleGueltigkeit.json"
+                    "format": "decimal",
+                    "type": "number"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Regionale Eingrenzung der Preisgarantie."
-        },
-        "zeitlicheGueltigkeit": {
-            "anyOf": [
-                {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zeitraum.json"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum\noder als Laufzeit in Monaten. "
+            "description": "Der Modifikator in Prozent, der auf den Preis der referenzierten Preisposition angewendet wird.\nDer Wert wird multiplikativ angewendet. D.h. wenn bspw. ein Rabatt von 20% angewendet werden soll, muss der Wert\n`0,8` betragen.",
+            "title": "Wert"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
@@ -99,6 +90,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "RegionalePreisgarantie",
+    "title": "RelativePreisposition",
     "type": "object"
 }

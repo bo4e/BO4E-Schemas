@@ -29,7 +29,6 @@
         "PREISBLATTUMLAGEN",
         "RECHNUNG",
         "REGION",
-        "REGIONALTARIF",
         "STANDORTEIGENSCHAFTEN",
         "TARIF",
         "TARIFINFO",
@@ -37,6 +36,7 @@
         "TARIFPREISBLATT",
         "VERTRAG",
         "ZAEHLER",
+        "ZAEHLZEITDEFINITION",
         "ZEITREIHE",
         "LOKATIONSZUORDNUNG"
     ],

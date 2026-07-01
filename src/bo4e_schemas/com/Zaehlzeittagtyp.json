@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Standorteigenschaften der Sparte Strom\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/StandorteigenschaftenStrom.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `StandorteigenschaftenStrom JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_",
+    "description": "Beschreibt das Schaltschema eines Tagtyps innerhalb einer `Zaehlzeitsaison`: welcher Tagtyp\ngemeint ist und zu welchen Uhrzeiten welches Register an diesem Tagtyp aktiv ist.\n\nDer Tagtyp wird über einen `Wiederholungstyp` ausgedrückt (z.B. `WERKTAGS`, `MONTAGS`,\n`FEIERTAGS`).\n\nDie `umschaltzeiten` füllen einen ganzen Tag vollständig und überlappungsfrei aus.\nDie jeweilige Umschaltzeit definiert (wenn der Größe nach sortiert) die untere Grenze (inklusiv);\nder Beginn des Tages (00:00 Uhr) und das Ende des Tages (24:00 Uhr) bilden die äußeren Grenzen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zaehlzeittagtyp.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zaehlzeittagtyp JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zaehlzeittagtyp.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "STANDORTEIGENSCHAFTENSTROM",
-            "default": "STANDORTEIGENSCHAFTENSTROM",
+            "const": "ZAEHLZEITTAGTYP",
+            "default": "ZAEHLZEITTAGTYP",
             "title": "Typ",
             "type": "string"
         },
@@ -34,44 +34,33 @@
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "bilanzierungsgebietEic": {
+        "tagtyp": {
             "anyOf": [
                 {
-                    "type": "string"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Wiederholungstyp.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Die EIC-Nummer des Bilanzierungsgebietes",
-            "title": "Bilanzierungsgebieteic"
+            "description": "An welchen Tagen das Schaltschema dieses Tagtyps gilt (z.B. `WERKTAGS`, `MONTAGS`, `FEIERTAGS`)."
         },
-        "regelzone": {
+        "umschaltzeiten": {
             "anyOf": [
                 {
-                    "type": "string"
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Umschaltzeit.json"
+                    },
+                    "type": "array"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Der Name der Regelzone",
-            "title": "Regelzone"
-        },
-        "regelzoneEic": {
-            "anyOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "De EIC-Nummer der Regelzone",
-            "title": "Regelzoneeic"
+            "description": "Die Umschaltzeiten dieses Tagtyps. Sortiert ergibt sich daraus das Schaltschema für einen Tag.",
+            "title": "Umschaltzeiten"
         },
         "zusatzAttribute": {
             "anyOf": [
@@ -89,6 +78,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "StandorteigenschaftenStrom",
+    "title": "Zaehlzeittagtyp",
     "type": "object"
 }

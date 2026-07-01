@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Gibt die Staffelgrenzen der jeweiligen Preise an\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Preisstaffel.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Preisstaffel JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Preisstaffel.json>`_",
+    "description": "Gibt die Staffelgrenzen der jeweiligen Preise an\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Preisstaffel.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Preisstaffel JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Preisstaffel.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc2",
+            "default": "202601.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -44,10 +44,23 @@
                 }
             ],
             "default": null,
-            "description": "Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die BDEW-Artikelnummer ablöst",
+            "description": "Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die BDEW-Artikelnummer ablöst.",
             "title": "Artikelid"
         },
-        "einheitspreis": {
+        "bezeichnung": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Eine (beliebige) Bezeichnung für die Preisstaffel.",
+            "title": "Bezeichnung"
+        },
+        "preis": {
             "anyOf": [
                 {
                     "format": "decimal",
@@ -58,13 +71,13 @@
                 }
             ],
             "default": null,
-            "description": "Preis pro abgerechneter Mengeneinheit",
-            "title": "Einheitspreis"
+            "description": "Preis pro abgerechneter Mengeneinheit. Die Mengeneinheit wird durch das übergeordnete Objekt angegeben.",
+            "title": "Preis"
         },
         "sigmoidparameter": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Sigmoidparameter.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Sigmoidparameter.json"
                 },
                 {
                     "type": "null"
@@ -84,7 +97,7 @@
                 }
             ],
             "default": null,
-            "description": "Exklusiver oberer Wert, bis zu dem die Staffel gilt",
+            "description": "Exklusiver oberer Wert, bis zu dem die Staffel gilt (inklusiv).\nGrenzen werden bspw. wie folgt angegeben: `0 - 1000, 1001 - 2000, etc.`\nWerte zwischen den Grenzen (z.B. `1000,6`) rutschen in die obere Zone / Staffel.",
             "title": "Staffelgrenzebis"
         },
         "staffelgrenzeVon": {
@@ -98,14 +111,14 @@
                 }
             ],
             "default": null,
-            "description": "Inklusiver unterer Wert, ab dem die Staffel gilt",
+            "description": "Inklusiver unterer Wert, ab dem die Staffel gilt (inklusiv).\nGrenzen werden bspw. wie folgt angegeben: `0 - 1000, 1001 - 2000, etc.`\nWerte zwischen den Grenzen (z.B. `1000,6`) rutschen in die obere Zone / Staffel.",
             "title": "Staffelgrenzevon"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

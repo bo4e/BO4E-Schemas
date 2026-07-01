@@ -1,0 +1,12 @@
+{
+    "description": "Referenz worauf sich eine Preisposition bezieht.",
+    "enum": [
+        "ENERGIEMENGE",
+        "LEISTUNG",
+        "ZEITRAUM",
+        "ANZAHL",
+        "PAUSCHAL"
+    ],
+    "title": "Preisreferenz",
+    "type": "string"
+}

@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Modellierung einer Region als Menge von Kriterien, die eine Region beschreiben\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Region.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Region JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Region.json>`_",
+    "description": "Modellierung einer Region als Liste von Regionsoperationen.\n\nDie Reihenfolge der Regionsoperationen ist relevant,\nwird aber nicht zwingend durch die Sortierung innerhalb der Liste definiert. Die Sortierung der Regionsoperationen\nwird durch das Feld `prioritaet` im COM `Regionsoperation` explizit festgelegt, um technischen Problemen bei\nspezifischen Umsetzungen vorzubeugen und Klarheit zu schaffen.\nBei einer Implementierung sollte darauf geachtet werden, dass sich \"prioritaeten\" nicht doppeln können.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Region.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Region JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Region.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,9 +30,22 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc2",
+            "default": "202601.0.0",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
+        },
+        "beschreibung": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Beschreibung der Region",
+            "title": "Beschreibung"
         },
         "bezeichnung": {
             "anyOf": [
@@ -47,11 +60,11 @@
             "description": "Bezeichnung der Region",
             "title": "Bezeichnung"
         },
-        "negativListe": {
+        "regionsoperationen": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Regionskriterium.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Regionsoperation.json"
                     },
                     "type": "array"
                 },
@@ -60,30 +73,14 @@
                 }
             ],
             "default": null,
-            "description": "Negativliste der Kriterien zur Definition der Region",
-            "title": "Negativliste"
-        },
-        "positivListe": {
-            "anyOf": [
-                {
-                    "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Regionskriterium.json"
-                    },
-                    "type": "array"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Positivliste der Kriterien zur Definition der Region",
-            "title": "Positivliste"
+            "description": "Eine (unsortierte) Liste von Regionsoperationen.\nDie Sortierung wird durch das Feld `prioritaet` im COM `Regionsoperation` festgelegt.",
+            "title": "Regionsoperationen"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

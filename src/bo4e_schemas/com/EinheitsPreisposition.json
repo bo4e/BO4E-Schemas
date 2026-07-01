@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/TarifpreispositionProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `TarifpreispositionProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/TarifpreispositionProOrt.json>`_",
+    "description": "Die Einheits-Preisposition modelliert Preispositionen ohne Variabilität\n(bis auf die übergeordnete Variabilität durch eine Zeitscheibe und einer Region).\n\nDies kann z.B. ein Arbeitspreis sein. Der Bezug wird dabei durch die Preisreferenz angegeben.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/EinheitsPreisposition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `EinheitsPreisposition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/EinheitsPreisposition.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "TARIFPREISPOSITIONPROORT",
-            "default": "TARIFPREISPOSITIONPROORT",
+            "const": "EINHEITSPREISPOSITION",
+            "default": "EINHEITSPREISPOSITION",
             "title": "Typ",
             "type": "string"
         },
@@ -30,11 +30,11 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc2",
+            "default": "202601.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "netznr": {
+        "bezeichnung": {
             "anyOf": [
                 {
                     "type": "string"
@@ -44,55 +44,38 @@
                 }
             ],
             "default": null,
-            "description": "ene't-Netznummer des Netzes in dem der Preis gilt",
-            "title": "Netznr"
+            "description": "Eine (beliebige) Bezeichnung für die Preisposition.",
+            "title": "Bezeichnung"
         },
-        "ort": {
+        "preis": {
             "anyOf": [
                 {
-                    "type": "string"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Preis.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Ort für den der Preis gilt",
-            "title": "Ort"
+            "description": "Der Preis für diese Position."
         },
-        "postleitzahl": {
+        "preisreferenz": {
             "anyOf": [
                 {
-                    "type": "string"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Preisreferenz.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Postleitzahl des Ortes für den der Preis gilt",
-            "title": "Postleitzahl"
-        },
-        "preisstaffeln": {
-            "anyOf": [
-                {
-                    "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json"
-                    },
-                    "type": "array"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "title": "Preisstaffeln"
+            "description": "Die Referenz worauf sich der Preis bezieht.\nDie explizite Einheit wird durch das Feld `bezugswert` im `COM Preis` angegeben."
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
@@ -104,6 +87,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "TarifpreispositionProOrt",
+    "title": "EinheitsPreisposition",
     "type": "object"
 }

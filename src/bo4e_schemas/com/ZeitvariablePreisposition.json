@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Gibt die Staffelgrenzen der jeweiligen Preise an\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/TarifpreisstaffelProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `TarifpreisstaffelProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_",
+    "description": "Modelliert eine zeitvariable Preisposition.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/ZeitvariablePreisposition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `ZeitvariablePreisposition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/ZeitvariablePreisposition.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "TARIFPREISSTAFFELPROORT",
-            "default": "TARIFPREISSTAFFELPROORT",
+            "const": "ZEITVARIABLEPREISPOSITION",
+            "default": "ZEITVARIABLEPREISPOSITION",
             "title": "Typ",
             "type": "string"
         },
@@ -30,85 +30,77 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc2",
+            "default": "202601.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "arbeitspreis": {
+        "bezeichnung": {
             "anyOf": [
                 {
-                    "format": "decimal",
-                    "type": "number"
+                    "type": "string"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Der Arbeitspreis in ct/kWh",
-            "title": "Arbeitspreis"
+            "description": "Eine (beliebige) Bezeichnung für die Preisposition.",
+            "title": "Bezeichnung"
         },
-        "arbeitspreisNT": {
+        "preis": {
             "anyOf": [
                 {
-                    "format": "decimal",
-                    "type": "number"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Preis.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Der Arbeitspreis für Verbräuche in der Niedertarifzeit in ct/kWh",
-            "title": "Arbeitspreisnt"
+            "description": "Der Preis für diese Position."
         },
-        "grundpreis": {
+        "preisreferenz": {
             "anyOf": [
                 {
-                    "format": "decimal",
-                    "type": "number"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Preisreferenz.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Der Grundpreis in Euro/Jahr",
-            "title": "Grundpreis"
+            "description": "Die Referenz worauf sich der Preis bezieht.\nDie explizite Einheit wird durch das Feld `bezugswert` im `COM Preis` angegeben."
         },
-        "staffelgrenzeBis": {
+        "zaehlzeitdefinition": {
             "anyOf": [
                 {
-                    "format": "decimal",
-                    "type": "number"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Zaehlzeitdefinition.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Oberer Wert, bis zu dem die Staffel gilt (exklusive)",
-            "title": "Staffelgrenzebis"
+            "description": "Die Zählzeitdefinition, deren Schaltschema bestimmt, wann diese Preisposition gilt."
         },
-        "staffelgrenzeVon": {
+        "zaehlzeitregister": {
             "anyOf": [
                 {
-                    "format": "decimal",
-                    "type": "number"
+                    "type": "string"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Unterer Wert, ab dem die Staffel gilt (inklusive)",
-            "title": "Staffelgrenzevon"
+            "description": "Der freie Register-Code (z.B. \"HT\", \"NT\", \"ST\", \"SuperHT\") innerhalb der referenzierten\n`zaehlzeitdefinition`, auf den sich diese Preisposition bezieht. Der Code sollte als\n`registercode` in mindestens einer `Umschaltzeit` der referenzierten Zählzeitdefinition\nvorkommen.",
+            "title": "Zaehlzeitregister"
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
@@ -120,6 +112,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "TarifpreisstaffelProOrt",
+    "title": "ZeitvariablePreisposition",
     "type": "object"
 }

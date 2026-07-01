@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Gibt den Wert eines Auf- oder Abschlags und dessen Staffelgrenzen an\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/AufAbschlagstaffelProOrt.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `AufAbschlagstaffelProOrt JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_",
+    "description": "Komponente zur Abbildung einer Region mit einer Zeitscheibe.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Regionszeitscheibe.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Regionszeitscheibe JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Regionszeitscheibe.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "AUFABSCHLAGSTAFFELPROORT",
-            "default": "AUFABSCHLAGSTAFFELPROORT",
+            "const": "REGIONSZEITSCHEIBE",
+            "default": "REGIONSZEITSCHEIBE",
             "title": "Typ",
             "type": "string"
         },
@@ -30,57 +30,39 @@
                     "type": "null"
                 }
             ],
-            "default": "202501.1.0rc2",
+            "default": "202601.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "staffelgrenzeBis": {
+        "region": {
             "anyOf": [
                 {
-                    "format": "decimal",
-                    "type": "number"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Region.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Oberer Wert, bis zu dem die Staffel gilt.",
-            "title": "Staffelgrenzebis"
+            "description": "Die Region wird durch das Feld `zeitscheibengueltigkeit` mit einer Zeitscheibe versehen."
         },
-        "staffelgrenzeVon": {
+        "zeitscheibengueltigkeit": {
             "anyOf": [
                 {
-                    "format": "decimal",
-                    "type": "number"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Unterer Wert, ab dem die Staffel gilt.",
-            "title": "Staffelgrenzevon"
-        },
-        "wert": {
-            "anyOf": [
-                {
-                    "format": "decimal",
-                    "type": "number"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "Der Wert für den Auf- oder Abschlag.",
-            "title": "Wert"
+            "description": "Versieht die Region mit einer Zeitscheibe. Der Start- und Endzeitpunkt sollte durch das Objekt ermittelbar sein."
         },
         "zusatzAttribute": {
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
@@ -92,6 +74,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "AufAbschlagstaffelProOrt",
+    "title": "Regionszeitscheibe",
     "type": "object"
 }

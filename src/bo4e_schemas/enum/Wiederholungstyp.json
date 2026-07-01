@@ -1,0 +1,18 @@
+{
+    "description": "Klassifiziert einen Tagtyp, an dem ein wiederkehrendes Schaltschema (z.B. die Umschaltzeiten einer\n`Zaehlzeitdefinition`) gilt. Die Werte teilen sich in drei Gruppen auf:\n\n* `TAEGLICH` – gilt an jedem Tag des Jahres.\n* Gruppenbezeichnungen (`WERKTAGS`, `WOCHENENDE`, `FEIERTAGS`) – fassen mehrere Wochentage zusammen.\n  Was als Feiertag zählt, wird durch den Feiertagskalender der `Zaehlzeitdefinition` bestimmt.\n* Einzelne Wochentage (`MONTAGS` … `SONNTAGS`).",
+    "enum": [
+        "TAEGLICH",
+        "WERKTAGS",
+        "WOCHENENDE",
+        "FEIERTAGS",
+        "MONTAGS",
+        "DIENSTAGS",
+        "MITTWOCHS",
+        "DONNERSTAGS",
+        "FREITAGS",
+        "SAMSTAGS",
+        "SONNTAGS"
+    ],
+    "title": "Wiederholungstyp",
+    "type": "string"
+}

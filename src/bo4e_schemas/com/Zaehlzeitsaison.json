@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Standorteigenschaften der Sparte Strom\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/StandorteigenschaftenStrom.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `StandorteigenschaftenStrom JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_",
+    "description": "Bündelt alle Schaltschemata, die innerhalb einer Saison einer `Zaehlzeitdefinition` gelten.\n\nEine Saison ist ein Teil des Jahres, in dem dieselben Schaltschemata gelten – typischerweise\nSommer und Winter. Welche Tage zu welcher Saison gehören, wird nicht in diesem COM, sondern\nüber das `saisonprofil` der übergeordneten `Zaehlzeitdefinition` festgelegt; `bezeichnung`\nbildet hier die textuelle Verknüpfung zwischen Profil und Saisonabschnitt.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zaehlzeitsaison.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zaehlzeitsaison JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zaehlzeitsaison.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -16,8 +16,8 @@
             "title": "Id"
         },
         "_typ": {
-            "const": "STANDORTEIGENSCHAFTENSTROM",
-            "default": "STANDORTEIGENSCHAFTENSTROM",
+            "const": "ZAEHLZEITSAISON",
+            "default": "ZAEHLZEITSAISON",
             "title": "Typ",
             "type": "string"
         },
@@ -34,7 +34,7 @@
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
-        "bilanzierungsgebietEic": {
+        "bezeichnung": {
             "anyOf": [
                 {
                     "type": "string"
@@ -44,34 +44,24 @@
                 }
             ],
             "default": null,
-            "description": "Die EIC-Nummer des Bilanzierungsgebietes",
-            "title": "Bilanzierungsgebieteic"
+            "description": "Bezeichnung der Saison (z.B. \"Sommer\", \"Winter\"). Muss zu einem Saisonabschnitt des in der\nübergeordneten `Zaehlzeitdefinition` referenzierten `saisonprofil` passen. Leer, wenn keine\nSaisonunterscheidung getroffen wird.",
+            "title": "Bezeichnung"
         },
-        "regelzone": {
+        "tagtypen": {
             "anyOf": [
                 {
-                    "type": "string"
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zaehlzeittagtyp.json"
+                    },
+                    "type": "array"
                 },
                 {
                     "type": "null"
                 }
             ],
             "default": null,
-            "description": "Der Name der Regelzone",
-            "title": "Regelzone"
-        },
-        "regelzoneEic": {
-            "anyOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "null"
-                }
-            ],
-            "default": null,
-            "description": "De EIC-Nummer der Regelzone",
-            "title": "Regelzoneeic"
+            "description": "Die Schaltschemata für die unterschiedlichen Tagtypen (z.B. Werktag, Wochenende, Feiertag)\ninnerhalb dieser Saison.",
+            "title": "Tagtypen"
         },
         "zusatzAttribute": {
             "anyOf": [
@@ -89,6 +79,6 @@
             "title": "Zusatzattribute"
         }
     },
-    "title": "StandorteigenschaftenStrom",
+    "title": "Zaehlzeitsaison",
     "type": "object"
 }
