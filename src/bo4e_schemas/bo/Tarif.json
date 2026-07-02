@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Abbildung eines Tarifs.\n\nDer Tarifpreis kann regionsaufgelöst und unter Angabe von Zeitscheiben angegeben werden. So kann bspw. derselbe\nTarif je nach Region andere Preise aufweisen. Es können auch Tarifpreise abgebildet werden, die sich ab einem\nbestimmten Zeitpunkt auf andere Regionen ausweiten, da die Regionen ebenfalls mit Zeitscheiben versehen sind.\n\nEin Tarifpreis setzt sich dabei aus mehreren Preispositionen zusammen. So können z.B. auch mit\n`COM RelativePreisposition` prozentuale Auf- und Abschläge auf andere Preispositionen definiert werden.\nAlle Preispositionen hängen unter `COM Tarifpreiszeitscheibe` mit einer Ausnahme.\n\nMöchten Sie einen dynamischen Tarif modellieren, so gibt es das `COM DynamischePreisposition`. Da diese\nPreisposition weder orts- noch zeitabhängig ist, hängt diese direkt unter dem `BO Tarif`. Eine zeitabhängige\nÄnderung einer dynamischen Tarifpreisposition ist unsinnig, da es sich (unserer Ansicht nach) dann um einen\nvöllig neuen Tarif handelt. Davon unabhängig können (und müssen) natürlich weiterhin zusätzlich alle anderen\nPreispositionen orts- und zeitabhängig angegeben werden.\n\n> Hinweis: Das Vorhandensein einer `COM DynamischePreisposition` dient gleichzeitig auch als \"Flag\" dafür, ob\n> es sich bei diesem Tarif um einen dynamischen handelt.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Tarif.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Tarif JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Tarif.json>`_",
+    "description": "Abbildung eines Tarifs.\n\nDer Tarifpreis kann regionsaufgelöst und unter Angabe von Zeitscheiben angegeben werden. So kann bspw. derselbe\nTarif je nach Region andere Preise aufweisen. Es können auch Tarifpreise abgebildet werden, die sich ab einem\nbestimmten Zeitpunkt auf andere Regionen ausweiten, da die Regionen ebenfalls mit Zeitscheiben versehen sind.\n\nEin Tarifpreis setzt sich dabei aus mehreren Preispositionen zusammen. So können z.B. auch mit\n`COM RelativePreisposition` prozentuale Auf- und Abschläge auf andere Preispositionen definiert werden.\nAlle Preispositionen hängen unter `COM Tarifpreiszeitscheibe` mit einer Ausnahme.\n\nMöchten Sie einen dynamischen Tarif modellieren, so gibt es das `COM DynamischePreisposition`. Da diese\nPreisposition weder orts- noch zeitabhängig ist, hängt diese direkt unter dem `BO Tarif`. Eine zeitabhängige\nÄnderung einer dynamischen Tarifpreisposition ist unsinnig, da es sich (unserer Ansicht nach) dann um einen\nvöllig neuen Tarif handelt. Davon unabhängig können (und müssen) natürlich weiterhin zusätzlich alle anderen\nPreispositionen orts- und zeitabhängig angegeben werden.\n\n> Hinweis: Das Vorhandensein einer `COM DynamischePreisposition` dient gleichzeitig auch als \"Flag\" dafür, ob\n> es sich bei diesem Tarif um einen dynamischen handelt.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/bo/Tarif.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Tarif JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/bo/Tarif.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,14 +30,14 @@
                     "type": "null"
                 }
             ],
-            "default": "202601.0.0",
+            "default": "202607.0.0",
             "description": "Version der BO-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
         "anbieter": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Marktteilnehmer.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/bo/Marktteilnehmer.json"
                 },
                 {
                     "type": "null"
@@ -89,7 +89,7 @@
         "berechnungsparameter": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Tarifberechnungsparameter.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Tarifberechnungsparameter.json"
                 },
                 {
                     "type": "null"
@@ -140,7 +140,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Energiemix.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Energiemix.json"
                     },
                     "type": "array"
                 },
@@ -155,7 +155,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Kundentyp.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/enum/Kundentyp.json"
                     },
                     "type": "array"
                 },
@@ -169,7 +169,7 @@
         "preisgarantie": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Preisgarantie.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Preisgarantie.json"
                 },
                 {
                     "type": "null"
@@ -181,7 +181,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Regionspreis.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Regionspreis.json"
                     },
                     "type": "array"
                 },
@@ -196,7 +196,7 @@
         "registeranzahl": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Registeranzahl.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/enum/Registeranzahl.json"
                 },
                 {
                     "type": "null"
@@ -207,7 +207,7 @@
         "sparte": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Sparte.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/enum/Sparte.json"
                 },
                 {
                     "type": "null"
@@ -218,7 +218,7 @@
         "tarifeinschraenkung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Tarifeinschraenkung.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Tarifeinschraenkung.json"
                 },
                 {
                     "type": "null"
@@ -231,7 +231,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Tarifmerkmal.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/enum/Tarifmerkmal.json"
                     },
                     "type": "array"
                 },
@@ -245,7 +245,7 @@
         "tariftyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Tariftyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/enum/Tariftyp.json"
                 },
                 {
                     "type": "null"
@@ -256,7 +256,7 @@
         "vertragskonditionen": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Vertragskonditionen.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Vertragskonditionen.json"
                 },
                 {
                     "type": "null"
@@ -279,7 +279,7 @@
         "zeitlicheGueltigkeit": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zeitraum.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
@@ -291,7 +291,7 @@
         "zeitraumBelieferbarkeit": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zeitraum.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
@@ -303,7 +303,7 @@
         "zeitraumVermarktung": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zeitraum.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
@@ -316,7 +316,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

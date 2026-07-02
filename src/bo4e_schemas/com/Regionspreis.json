@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit dieser Komponente wird ein aus mehreren Positionen zusammengesetzter Preis regionsaufgelöst dargestellt.\nZu jedem Zeitpunkt darf es nur eine gültige Region und einen gültigen Preis geben.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Regionspreis.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Regionspreis JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Regionspreis.json>`_",
+    "description": "Mit dieser Komponente wird ein aus mehreren Positionen zusammengesetzter Preis regionsaufgelöst dargestellt.\nZu jedem Zeitpunkt darf es nur eine gültige Region und einen gültigen Preis geben.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Regionspreis.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Regionspreis JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Regionspreis.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202601.0.0",
+            "default": "202607.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -38,7 +38,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Regionszeitscheibe.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Regionszeitscheibe.json"
                     },
                     "type": "array"
                 },
@@ -54,7 +54,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Tarifpreiszeitscheibe.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Tarifpreiszeitscheibe.json"
                     },
                     "type": "array"
                 },
@@ -70,7 +70,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

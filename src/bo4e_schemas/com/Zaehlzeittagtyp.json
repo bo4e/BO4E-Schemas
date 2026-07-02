@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Beschreibt das Schaltschema eines Tagtyps innerhalb einer `Zaehlzeitsaison`: welcher Tagtyp\ngemeint ist und zu welchen Uhrzeiten welches Register an diesem Tagtyp aktiv ist.\n\nDer Tagtyp wird über einen `Wiederholungstyp` ausgedrückt (z.B. `WERKTAGS`, `MONTAGS`,\n`FEIERTAGS`).\n\nDie `umschaltzeiten` füllen einen ganzen Tag vollständig und überlappungsfrei aus.\nDie jeweilige Umschaltzeit definiert (wenn der Größe nach sortiert) die untere Grenze (inklusiv);\nder Beginn des Tages (00:00 Uhr) und das Ende des Tages (24:00 Uhr) bilden die äußeren Grenzen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zaehlzeittagtyp.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zaehlzeittagtyp JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zaehlzeittagtyp.json>`_",
+    "description": "Beschreibt das Schaltschema eines Tagtyps innerhalb einer `Zaehlzeitsaison`: welcher Tagtyp\ngemeint ist und zu welchen Uhrzeiten welches Register an diesem Tagtyp aktiv ist.\n\nDer Tagtyp wird über einen `Wiederholungstyp` ausgedrückt (z.B. `WERKTAGS`, `MONTAGS`,\n`FEIERTAGS`).\n\nDie `umschaltzeiten` füllen einen ganzen Tag vollständig und überlappungsfrei aus.\nDie jeweilige Umschaltzeit definiert (wenn der Größe nach sortiert) die untere Grenze (inklusiv);\nder Beginn des Tages (00:00 Uhr) und das Ende des Tages (24:00 Uhr) bilden die äußeren Grenzen.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zaehlzeittagtyp.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zaehlzeittagtyp JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Zaehlzeittagtyp.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,14 +30,14 @@
                     "type": "null"
                 }
             ],
-            "default": "202601.0.0",
+            "default": "202607.0.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
         "tagtyp": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/enum/Wiederholungstyp.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/enum/Wiederholungstyp.json"
                 },
                 {
                     "type": "null"
@@ -50,7 +50,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Umschaltzeit.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Umschaltzeit.json"
                     },
                     "type": "array"
                 },
@@ -66,7 +66,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
