@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit dieser Komponente kann ein aus verschiedenen Preispositionen zusammengesetzter Tarifpreis zeitaufgelöst\ndargestellt werden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Tarifpreiszeitscheibe.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Tarifpreiszeitscheibe JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/Tarifpreiszeitscheibe.json>`_",
+    "description": "Mit dieser Komponente kann ein aus verschiedenen Preispositionen zusammengesetzter Tarifpreis zeitaufgelöst\ndargestellt werden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Tarifpreiszeitscheibe.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Tarifpreiszeitscheibe JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/Tarifpreiszeitscheibe.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202607.1.0rc1",
+            "default": "202607.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -38,7 +38,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/EinheitsPreisposition.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/EinheitsPreisposition.json"
                     },
                     "type": "array"
                 },
@@ -54,7 +54,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/LastvariablePreisposition.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/LastvariablePreisposition.json"
                     },
                     "type": "array"
                 },
@@ -70,7 +70,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/RelativePreisposition.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/RelativePreisposition.json"
                     },
                     "type": "array"
                 },
@@ -85,7 +85,7 @@
         "zeitscheibengueltigkeit": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/Zeitraum.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/Zeitraum.json"
                 },
                 {
                     "type": "null"
@@ -98,7 +98,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/ZeitvariablePreisposition.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/ZeitvariablePreisposition.json"
                     },
                     "type": "array"
                 },
@@ -114,7 +114,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

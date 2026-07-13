@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Komponente zur Abbildung einer Regionsoperation.\n\nIn Kombination mit anderen Regionsoperationen kann eine Region definiert werden. Eine Regionsoperation ermöglicht\ndie Definition einer Region in eingeschränkter Form. Durch den Operator können mehrere \"einfache\" Regionsoperationen\nmiteinander kombiniert werden, um eine komplexere Region zu definieren.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Regionsoperation.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Regionsoperation JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/Regionsoperation.json>`_",
+    "description": "Komponente zur Abbildung einer Regionsoperation.\n\nIn Kombination mit anderen Regionsoperationen kann eine Region definiert werden. Eine Regionsoperation ermöglicht\ndie Definition einer Region in eingeschränkter Form. Durch den Operator können mehrere \"einfache\" Regionsoperationen\nmiteinander kombiniert werden, um eine komplexere Region zu definieren.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Regionsoperation.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Regionsoperation JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/Regionsoperation.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202607.1.0rc1",
+            "default": "202607.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -90,7 +90,7 @@
         "regionskriterium": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/enum/Regionskriterium.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/enum/Regionskriterium.json"
                 },
                 {
                     "type": "null"
@@ -102,7 +102,7 @@
         "regionsoperator": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/enum/Operator.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/enum/Operator.json"
                 },
                 {
                     "type": "null"
@@ -140,7 +140,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

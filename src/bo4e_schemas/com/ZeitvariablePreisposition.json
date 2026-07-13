@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Modelliert eine zeitvariable Preisposition.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/ZeitvariablePreisposition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `ZeitvariablePreisposition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/ZeitvariablePreisposition.json>`_",
+    "description": "Modelliert eine zeitvariable Preisposition.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/ZeitvariablePreisposition.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `ZeitvariablePreisposition JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/ZeitvariablePreisposition.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202607.1.0rc1",
+            "default": "202607.1.0rc2",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -50,7 +50,7 @@
         "preis": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/com/Preis.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/Preis.json"
                 },
                 {
                     "type": "null"
@@ -62,7 +62,7 @@
         "preisreferenz": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/enum/Preisreferenz.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/enum/Preisreferenz.json"
                 },
                 {
                     "type": "null"
@@ -74,7 +74,7 @@
         "zaehlzeitdefinition": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/bo/Zaehlzeitdefinition.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/bo/Zaehlzeitdefinition.json"
                 },
                 {
                     "type": "null"
@@ -100,7 +100,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc1/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
