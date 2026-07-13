@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Mit dieser Komponente kann eine einzelne Zahlungsinformation dargestellt werden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zahlungsinformation.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zahlungsinformation JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/Zahlungsinformation.json>`_",
+    "description": "Mit dieser Komponente kann eine einzelne Zahlungsinformation dargestellt werden.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Zahlungsinformation.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Zahlungsinformation JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0/src/bo4e_schemas/com/Zahlungsinformation.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202607.1.0rc2",
+            "default": "202607.1.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -102,7 +102,7 @@
         "zahlungsart": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/enum/Zahlungsart.json"
+                    "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0/src/bo4e_schemas/enum/Zahlungsart.json"
                 },
                 {
                     "type": "null"
@@ -115,7 +115,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },

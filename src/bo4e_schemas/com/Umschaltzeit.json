@@ -1,6 +1,6 @@
 {
     "additionalProperties": true,
-    "description": "Modelliert eine Umschaltzeit, wann auf ein bestimmtes Register geschaltet werden soll.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Umschaltzeit.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Umschaltzeit JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/Umschaltzeit.json>`_",
+    "description": "Modelliert eine Umschaltzeit, wann auf ein bestimmtes Register geschaltet werden soll.\n\n.. raw:: html\n\n    <object data=\"../_static/images/bo4e/com/Umschaltzeit.svg\" type=\"image/svg+xml\"></object>\n\n.. HINT::\n    `Umschaltzeit JSON Schema <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0/src/bo4e_schemas/com/Umschaltzeit.json>`_",
     "properties": {
         "_id": {
             "anyOf": [
@@ -30,7 +30,7 @@
                     "type": "null"
                 }
             ],
-            "default": "202607.1.0rc2",
+            "default": "202607.1.0",
             "description": "Version der COM-Struktur aka \"fachliche Versionierung\"",
             "title": "Version"
         },
@@ -65,7 +65,7 @@
             "anyOf": [
                 {
                     "items": {
-                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json"
+                        "$ref": "https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0/src/bo4e_schemas/ZusatzAttribut.json"
                     },
                     "type": "array"
                 },
