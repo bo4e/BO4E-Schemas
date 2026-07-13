@@ -24,7 +24,9 @@
         "KVAR",
         "KWHK",
         "VAR",
-        "VARH"
+        "VARH",
+        "HZ",
+        "DIMENSIONSLOS"
     ],
     "title": "Mengeneinheit",
     "type": "string"

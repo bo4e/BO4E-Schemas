@@ -13,7 +13,9 @@
         "BRENNWERT",
         "GRADTZAGSZAHLEN",
         "VOLUMENSTROM",
-        "PREISE"
+        "PHASENWINKEL",
+        "LEISTUNGSFAKTOR",
+        "FREQUENZ"
     ],
     "title": "Messgroesse",
     "type": "string"
